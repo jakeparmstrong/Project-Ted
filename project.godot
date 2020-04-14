@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Project Ted"
 run/main_scene="res://Levels/Kitchen/Kitchen.tscn"
-config/icon="res://icon.png"
+config/icon="res://Ted/TedClear.png"
 
 [input]
 

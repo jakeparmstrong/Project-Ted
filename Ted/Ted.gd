@@ -4,8 +4,12 @@ var moving_right
 var velocity = Vector2()
 var walk_speed = 350
 var walk_accel = 1000
-var gravity_scale = 500
-var jump_velocity = 15000
+var gravity_scale = 800
+var jump_velocity = 100
+var jump_impulse = 3000
+var jump_multiplier = 3
+var jump_button_timer = 0
+var allow_jump = true
 
 
 func _ready() -> void:
@@ -28,10 +32,19 @@ func get_input(delta):
 		$AnimatedSprite.set_flip_h(true)
 	else:
 		$AnimatedSprite.set_flip_h(false)
-	if Input.is_action_just_pressed("player_jump"):
-		velocity.y -= jump_velocity
+	if Input.is_action_pressed("player_jump") and jump_button_timer < 0.2 and allow_jump:
+		jump_button_timer += delta
+		velocity.y -= gravity_scale * (jump_multiplier - 1) #add impulse thing?
+		print(velocity)
+	if jump_button_timer > 0.2:
+		allow_jump = false
 
 func _physics_process(delta: float) -> void:
 	velocity.y = gravity_scale
+	if velocity.y == 0: #doesn't work -- check if ted is on floor?
+		allow_jump = true
+		jump_button_timer = 0
+	else: 
+		print(velocity.y)
 	get_input(delta)
 	move_and_slide(velocity)
