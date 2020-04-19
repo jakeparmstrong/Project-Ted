@@ -41,10 +41,8 @@ func get_input(delta):
 
 func _physics_process(delta: float) -> void:
 	velocity.y = gravity_scale
-	if velocity.y == 0: #doesn't work -- check if ted is on floor?
+	get_input(delta)
+	move_and_slide(velocity, Vector2(0, -1))
+	if is_on_floor() and Input.is_action_just_released("player_jump"): #doesn't work -- check if ted is on floor?
 		allow_jump = true
 		jump_button_timer = 0
-	else: 
-		print(velocity.y)
-	get_input(delta)
-	move_and_slide(velocity)
