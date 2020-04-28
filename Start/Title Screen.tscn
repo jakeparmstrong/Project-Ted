@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Start/Logo.png" type="Texture" id=1]
+[ext_resource path="res://Start/Buttons/MenuButton.tscn" type="PackedScene" id=2]
+
+[node name="Title Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 960.0
+margin_bottom = 534.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 896.0
+margin_bottom = 89.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 93.0
+margin_right = 896.0
+margin_bottom = 470.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 896.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="Menu/CenterRow/Buttons"]
+margin_right = 896.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 600, 100 )
+flat = true
+
+[node name="Label" parent="Menu/CenterRow/Buttons/MenuButton" instance=ExtResource( 2 )]
+margin_top = -1.0
+margin_bottom = 27.0
+
+[node name="Continue" type="Button" parent="Menu/CenterRow/Buttons"]
+margin_top = 104.0
+margin_right = 896.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 600, 100 )
+flat = true
+
+[node name="Label" parent="Menu/CenterRow/Buttons/Continue" instance=ExtResource( 2 )]
+text = "Continue"
+
+[node name="Options" type="Button" parent="Menu/CenterRow/Buttons"]
+margin_top = 208.0
+margin_right = 896.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 600, 100 )
+flat = true
+
+[node name="Label" parent="Menu/CenterRow/Buttons/Options" instance=ExtResource( 2 )]
+text = "Options"
