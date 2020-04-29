@@ -1,6 +1,6 @@
 
 extends KinematicBody2D
-
+signal bone_collected
 var moving_right
 var velocity = Vector2()
 var walk_speed = 350
@@ -11,7 +11,7 @@ var jump_multiplier = 3
 var jump_button_timer = 0
 var allow_jump = true
 var max_jump_length_s = 1.5
-
+var bone_count = 0
 
 func _ready() -> void:
 	moving_right = true
@@ -39,6 +39,8 @@ func get_input(delta):
 	if jump_button_timer > max_jump_length_s:
 		allow_jump = false
 		print("deltahi")
+	if !is_on_floor() and !Input.is_action_pressed("player_jump"):
+		allow_jump = false
 
 func _physics_process(delta: float) -> void:
 	velocity.y = gravity_scale
