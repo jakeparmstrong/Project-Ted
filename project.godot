@@ -19,6 +19,11 @@ config/name="Project Ted"
 run/main_scene="res://Levels/Kitchen/Kitchen.tscn"
 config/icon="res://Ted/TedClear.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 player_jump={

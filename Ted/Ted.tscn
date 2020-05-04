@@ -4,8 +4,8 @@
 [ext_resource path="res://Ted/Ted.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 0.907703
-height = 93.393
+radius = 1.03402
+height = 99.1231
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -15,7 +15,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Ted" type="KinematicBody2D"]
+[node name="Ted" type="KinematicBody2D" groups=[
+"player",
+]]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

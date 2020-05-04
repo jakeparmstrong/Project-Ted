@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Items/Bone/bonesheetBig.png" type="Texture" id=1]
 [ext_resource path="res://Items/Bone/BoneArea.gd" type="Script" id=2]
+[ext_resource path="res://Items/Bone/Bone.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -55,8 +56,10 @@ animations = [ {
 } ]
 
 [node name="Bone" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="BoneArea" type="Area2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoneArea"]
@@ -67,6 +70,7 @@ position = Vector2( 8, -3 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 10 )
 animation = "BoneIdle"
-frame = 3
+frame = 1
 playing = true
 [connection signal="body_entered" from="BoneArea" to="BoneArea" method="_on_BoneArea_body_entered"]
+[connection signal="bone_collected_internal" from="BoneArea" to="." method="_on_BoneArea_bone_collected_internal"]
