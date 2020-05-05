@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HUD/Counter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HUD/Label.gd" type="Script" id=2]
+[ext_resource path="res://HUD/boneicon.png" type="Texture" id=3]
 
 [node name="BoneCounter" instance=ExtResource( 1 )]
 anchor_top = -0.005
@@ -9,10 +10,19 @@ anchor_right = 0.00976563
 anchor_bottom = -0.005
 
 [node name="TextureRect" parent="." index="0"]
-margin_left = -191.151
-margin_top = -82.153
-margin_right = -24.1513
-margin_bottom = 102.847
+margin_left = -124.38
+margin_top = -64.9079
+margin_right = 42.6198
+margin_bottom = 120.092
+rect_scale = Vector2( 0.748133, 0.734052 )
+texture = ExtResource( 3 )
 
 [node name="Label" parent="." index="1"]
+margin_left = 17.8413
+margin_top = -72.653
+margin_right = 257.841
+margin_bottom = 93.347
+rect_scale = Vector2( 0.90233, 0.90233 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+text = "10/12"
 script = ExtResource( 2 )

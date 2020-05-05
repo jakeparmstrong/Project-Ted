@@ -1,5 +1,7 @@
-
 extends KinematicBody2D
+
+signal pause_game
+
 var moving_right
 var velocity = Vector2()
 var walk_speed = 350
@@ -10,12 +12,13 @@ var jump_multiplier = 3
 var jump_button_timer = 0
 var allow_jump = true
 var max_jump_length_s = 1.5
-var bone_count = 0
 
 func _ready() -> void:
 	moving_right = true
 
 func get_input(delta):
+	if Input.is_action_just_pressed("ui_pause"):
+		emit_signal("pause_game")
 	if Input.is_action_pressed("ui_right"):
 		moving_right = true
 		if velocity.x < walk_speed:
