@@ -4,7 +4,7 @@
 [ext_resource path="res://Ted/Ted.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Kitchen/download.jpg" type="Texture" id=3]
 [ext_resource path="res://Levels/Kitchen/KitchenFloorTileSet.tres" type="TileSet" id=4]
-[ext_resource path="res://Levels/Kitchen/Platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Kitchen/MovingPlatform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://HUD/Interface.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Kitchen/Kitchen.gd" type="Script" id=7]
 
@@ -27,15 +27,6 @@ smoothing_enabled = true
 
 [node name="Bone" parent="." instance=ExtResource( 1 )]
 position = Vector2( 829.087, 102.2 )
-
-[node name="Bone10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3183.11, 549.389 )
-
-[node name="Bone11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3626.65, 516.543 )
-
-[node name="Bone12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3390.1, 516.543 )
 
 [node name="Bone2" parent="." instance=ExtResource( 1 )]
 position = Vector2( -58.8342, 446.142 )
@@ -61,8 +52,17 @@ position = Vector2( 1944.15, 1024.64 )
 [node name="Bone9" parent="." instance=ExtResource( 1 )]
 position = Vector2( 932.333, 1024.64 )
 
-[node name="Platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 831.142, 249.963 )
+[node name="Bone10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3183.11, 549.389 )
+
+[node name="Bone11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3626.65, 516.543 )
+
+[node name="Bone12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3390.1, 516.543 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 5 )]
+position = Vector2( 835.056, 401.518 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -77,9 +77,6 @@ pause_mode = 2
 [connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
-[connection signal="bone_collected" from="Bone10" to="." method="_on_Bone_bone_collected"]
-[connection signal="bone_collected" from="Bone11" to="." method="_on_Bone_bone_collected"]
-[connection signal="bone_collected" from="Bone12" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone4" to="." method="_on_Bone_bone_collected"]
@@ -88,4 +85,7 @@ pause_mode = 2
 [connection signal="bone_collected" from="Bone7" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone8" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone9" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone10" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone11" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone12" to="." method="_on_Bone_bone_collected"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
