@@ -23,6 +23,7 @@ position = Vector2( 516, 62 )
 
 [node name="Camera2D" type="Camera2D" parent="Ted"]
 current = true
+limit_left = -200
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
@@ -76,8 +77,8 @@ pause_mode = 2
 
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 6 )]
 pause_mode = 2
-[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
