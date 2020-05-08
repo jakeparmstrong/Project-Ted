@@ -1,6 +1,8 @@
 extends Node2D
 
+var final_score = 0
 var bone_score = 0
+const BONE_MULT = 5
 const NUM_BONES = 12
 var stop_animation = false
 
@@ -24,3 +26,8 @@ func _on_Ted_pause_game() -> void:
 func _on_Interface_unpause_external() -> void:
 	get_tree().paused = false
 	get_node("CanvasLayer/Interface/PauseScreen").set_visible(false)
+
+func _on_Interface_time_out_external() -> void:
+	get_tree().paused = true
+	final_score = bone_score * BONE_MULT
+	get_node("CanvasLayer/Interface/FinalScore").set_visible(true)
