@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://HUD/BoneCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://HUD/Interface.gd" type="Script" id=4]
 [ext_resource path="res://HUD/Clock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://HUD/thing.png" type="Texture" id=6]
+[ext_resource path="res://HUD/EndText.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -32,22 +33,24 @@ __meta__ = {
 
 [node name="BoneCounter" parent="." instance=ExtResource( 1 )]
 
-[node name="StageClear" type="Label" parent="."]
+[node name="EndText" type="Label" parent="."]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -264.0
-margin_top = -24.0
+margin_top = -157.0
 margin_right = 264.0
-margin_bottom = 24.0
+margin_bottom = -109.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.635294, 0.113725, 0.113725, 1 )
 custom_colors/font_color_shadow = Color( 0.345098, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 2
 text = "STAGE CLEAR"
+align = 1
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -74,15 +77,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Controls" type="Label" parent="PauseScreen"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PauseScreen"]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+margin_left = -224.0
+margin_top = 47.5
+margin_right = 224.0
+margin_bottom = 212.5
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Label" parent="PauseScreen/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -200.0
-margin_top = 56.2831
+margin_top = -55.5
 margin_right = 200.0
-margin_bottom = 148.283
+margin_bottom = 55.5
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.635294, 0.113725, 0.113725, 1 )
 custom_colors/font_color_shadow = Color( 0.345098, 0, 0, 1 )
@@ -92,7 +109,8 @@ text = "CONTROLS
 
 MOVE LEFT      LEFT ARROW
 MOVE RIGHT    RIGHT ARROW
-JUMP            SPACE BAR"
+JUMP            SPACE BAR
+PAUSE/UNPAUSE         ESC"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -130,5 +148,6 @@ text = "Bones					[x] x 5
 
 
 Final Score			[num]"
+align = 1
 [connection signal="unpause_internal" from="PauseScreen" to="." method="_on_PauseScreen_unpause_internal"]
 [connection signal="time_out_interface" from="Clock" to="." method="_on_Clock_time_out_interface"]

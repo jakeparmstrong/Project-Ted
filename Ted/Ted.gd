@@ -6,9 +6,8 @@ var moving_right
 var velocity = Vector2()
 var walk_speed = 350
 var walk_accel = 1000
-var gravity_scale = 800
-var jump_velocity = 100
-var jump_multiplier = 3
+var gravity_scale = 500
+var jump_multiplier = 3.5
 var jump_button_timer = 0
 var allow_jump = true
 var max_jump_length_s = 1.5
