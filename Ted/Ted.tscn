@@ -4,8 +4,8 @@
 [ext_resource path="res://Ted/Ted.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 1.03402
-height = 99.1231
+radius = 0.850465
+height = 93.3038
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {

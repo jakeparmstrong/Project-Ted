@@ -5,7 +5,7 @@
 [ext_resource path="res://Items/Bone/Bone.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 40.0
+radius = 32.0
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -70,7 +70,7 @@ position = Vector2( 8, -3 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 10 )
 animation = "BoneIdle"
-frame = 1
+frame = 6
 playing = true
 [connection signal="body_entered" from="BoneArea" to="BoneArea" method="_on_BoneArea_body_entered"]
 [connection signal="bone_collected_internal" from="BoneArea" to="." method="_on_BoneArea_bone_collected_internal"]

@@ -6,12 +6,16 @@ var time_remaining
 # Used to set time remaining to a certain amount (on game init)
 func set_clock_time(time):
 	time_remaining = time
+
+# Used to access time remaining
+func get_clock_time():
+	return time_remaining
 	
 # To increment time by 'amount' - future use?
 func add_time(amount):
 	time_remaining += amount
 
-func _process(delta):
+func _process(_delta):
 		if str(time_remaining) != text:
 			text = str(time_remaining)
 		if time_remaining == 0:

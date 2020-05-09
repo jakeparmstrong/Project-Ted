@@ -10,6 +10,7 @@ scale = Vector2( 0.500355, 1.04072 )
 script = ExtResource( 2 )
 
 [node name="Platform" type="KinematicBody2D" parent="."]
+motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="Platform"]
 scale = Vector2( 1.33168, 0.0382796 )
