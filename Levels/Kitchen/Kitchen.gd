@@ -6,7 +6,7 @@ var stop_animation = false
 
 const BONE_MULT = 5
 const NUM_BONES = 12
-const TIME_LIMIT = 90
+const TIME_LIMIT = 10
 
 onready var BoneCountLabel = get_node("CanvasLayer/Interface/BoneCounter/Node/Label")
 onready var ClockLabel = get_node("CanvasLayer/Interface/Clock/ClockLabel")
@@ -42,7 +42,9 @@ func _on_Interface_time_out_external() -> void:
 
 func game_over(bone, time):
 	var end_text = "STAGE CLEAR" if (time > 0) else "TIME OUT"
+	print(time)
 	get_tree().paused = true
+	EndText.set_text(end_text)
 	EndText.set_visible(true)
 	FinalScoreLabel.update_text(bone_score, time)#kinda magic-number-y
 	FinalScore.set_visible(true)
