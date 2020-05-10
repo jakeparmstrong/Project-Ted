@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Items/Bone/Bone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ted/Ted.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Levels/Kitchen/MovingPlatform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://HUD/Interface.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Kitchen/Kitchen.gd" type="Script" id=7]
+[ext_resource path="res://Audio/bone_collected.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/youlose.wav" type="AudioStream" id=11]
+[ext_resource path="res://Audio/youwin.wav" type="AudioStream" id=12]
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource( 7 )
@@ -98,6 +101,18 @@ pause_mode = 2
 
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 6 )]
 pause_mode = 2
+
+[node name="BoneCollected" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+
+[node name="YouLoseSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 11 )
+
+[node name="YouWinSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 12 )
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
@@ -113,7 +128,7 @@ pause_mode = 2
 [connection signal="bone_collected" from="Bone12" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone13" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone14" to="." method="_on_Bone_bone_collected"]
-[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]

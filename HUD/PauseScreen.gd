@@ -3,8 +3,10 @@ extends Label
 signal unpause_internal
 var is_paused = false
 var pause_released = false
+onready var PauseSound = get_node("PauseSound")
 
 func handle_pause():
+	PauseSound.play()
 	self.set_is_paused(true)
 	self.set_pause_released(false)
 	self.set_visible(true)
