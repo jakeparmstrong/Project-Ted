@@ -5,7 +5,7 @@ var bone_score = 0
 var stop_animation = false
 
 const NUM_BONES = 15
-const TIME_LIMIT = 90
+const TIME_LIMIT = 60
 
 onready var BoneCountLabel = get_node("CanvasLayer/Interface/BoneCounter/Node/Label")
 onready var ClockLabel = get_node("CanvasLayer/Interface/Clock/ClockLabel")
