@@ -5,7 +5,7 @@ const IDLE_DURATION = 1.0
 export var move_to = Vector2.UP * 64 * 4
 export var speed = 3.0
 
-onready var platform = $Platform
+onready var platform = $TileMap
 onready var tween = $MoveTween
 
 func _ready():
