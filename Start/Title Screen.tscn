@@ -42,27 +42,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuButton" type="Button" parent="Menu/CenterRow/Buttons"]
+[node name="Play Game" type="Button" parent="Menu/CenterRow/Buttons"]
+margin_top = 50.0
 margin_right = 896.0
-margin_bottom = 100.0
+margin_bottom = 150.0
 rect_min_size = Vector2( 600, 100 )
 flat = true
 
-[node name="Label" parent="Menu/CenterRow/Buttons/MenuButton" instance=ExtResource( 2 )]
+[node name="Label" parent="Menu/CenterRow/Buttons/Play Game" instance=ExtResource( 2 )]
 margin_top = -1.0
 margin_bottom = 27.0
+text = "Play Game"
+align = 1
 
-[node name="Continue" type="Button" parent="Menu/CenterRow/Buttons"]
-margin_top = 104.0
+[node name="Controls" type="Button" parent="Menu/CenterRow/Buttons"]
+margin_top = 150.0
 margin_right = 896.0
-margin_bottom = 204.0
+margin_bottom = 253.0
 rect_min_size = Vector2( 600, 100 )
 flat = true
 
-[node name="Label" parent="Menu/CenterRow/Buttons/Continue" instance=ExtResource( 2 )]
-text = "Continue"
+[node name="Label" parent="Menu/CenterRow/Buttons/Controls" instance=ExtResource( 2 )]
+margin_left = 0.789551
+margin_right = 0.789551
+text = "Controls"
+align = 1
 
 [node name="Options" type="Button" parent="Menu/CenterRow/Buttons"]
+visible = false
 margin_top = 208.0
 margin_right = 896.0
 margin_bottom = 308.0
@@ -71,3 +78,4 @@ flat = true
 
 [node name="Label" parent="Menu/CenterRow/Buttons/Options" instance=ExtResource( 2 )]
 text = "Options"
+align = 1

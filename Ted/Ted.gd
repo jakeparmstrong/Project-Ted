@@ -27,12 +27,14 @@ func get_input(delta):
 		moving_right = true
 		if velocity.x < walk_speed:
 			velocity.x += walk_accel * delta
-		$AnimatedSprite.play("ted_stands")
+		$AnimatedSprite.play("ted_walks")
 	elif Input.is_action_pressed("ui_left"):
 		moving_right = false
+		$AnimatedSprite.play("ted_walks")
 		if velocity.x > -walk_speed:
 			velocity.x -= walk_accel * delta
 	else:
+		$AnimatedSprite.play("ted_stands")
 		if velocity.x != 0:
 			velocity.x /= 10
 	if not moving_right:
