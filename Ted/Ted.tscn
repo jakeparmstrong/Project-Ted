@@ -48,7 +48,8 @@ shape = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
 animation = "ted_walks"
-speed_scale = 1.5
+frame = 7
+speed_scale = 7.0
 playing = true
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
