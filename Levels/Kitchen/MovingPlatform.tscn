@@ -21,8 +21,10 @@ tile_data = PoolIntArray( 65534, 1, 0, 65535, 0, 0, 0, 0, 0, 1, 2, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
 scale = Vector2( 25.5765, 0.746845 )
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 position = Vector2( 0, 9.37276 )
-scale = Vector2( 1, 1 )
+rotation = -6.28318
 shape = SubResource( 1 )
+one_way_collision_margin = 4.7

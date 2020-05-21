@@ -131,7 +131,7 @@ stream = ExtResource( 12 )
 [connection signal="bone_collected" from="Bone13" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone14" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone16" to="." method="_on_Bone_bone_collected"]
-[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
