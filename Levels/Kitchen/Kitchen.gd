@@ -4,7 +4,7 @@ var final_score = 0
 var bone_score = 0
 var stop_animation = false
 
-const NUM_BONES = 15
+const NUM_BONES = 16
 const TIME_LIMIT = 60
 
 onready var BoneCountLabel = get_node("CanvasLayer/Interface/BoneCounter/Node/Label")
