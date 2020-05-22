@@ -7,9 +7,9 @@
 [ext_resource path="res://Levels/Kitchen/MovingPlatform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://HUD/Interface.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Kitchen/Kitchen.gd" type="Script" id=7]
-[ext_resource path="res://Audio/bone_collected.wav" type="AudioStream" id=8]
-[ext_resource path="res://Audio/youlose.wav" type="AudioStream" id=11]
-[ext_resource path="res://Audio/youwin.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/BoneCollected.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Audio/YouLoseSound.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Audio/YouWinSound.tscn" type="PackedScene" id=10]
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource( 7 )
@@ -104,17 +104,11 @@ pause_mode = 2
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 6 )]
 pause_mode = 2
 
-[node name="BoneCollected" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 8 )
+[node name="BoneCollected" parent="." instance=ExtResource( 8 )]
 
-[node name="YouLoseSound" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 11 )
+[node name="YouLoseSound" parent="." instance=ExtResource( 9 )]
 
-[node name="YouWinSound" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 12 )
+[node name="YouWinSound" parent="." instance=ExtResource( 10 )]
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]

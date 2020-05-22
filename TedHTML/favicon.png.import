@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ted_may11.png-95351f4274369e2a2f89b6ed4a15b1a8.stex"
+path="res://.import/favicon.png-afa982adb557bc8b60a5c521c7b1404b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://HTML/ted_may11.png"
-dest_files=[ "res://.import/ted_may11.png-95351f4274369e2a2f89b6ed4a15b1a8.stex" ]
+source_file="res://TedHTML/favicon.png"
+dest_files=[ "res://.import/favicon.png-afa982adb557bc8b60a5c521c7b1404b.stex" ]
 
 [params]
 

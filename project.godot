@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project Ted"
-run/main_scene="res://Levels/Kitchen/Kitchen.tscn"
+run/main_scene="res://Levels/Level2/Level2.tscn"
 config/icon="res://Ted/TedClear.png"
 
 [display]
@@ -58,5 +58,11 @@ player_walk_right={
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 quality/2d/use_pixel_snap=true
+quality/shadows/filter_mode=0
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
