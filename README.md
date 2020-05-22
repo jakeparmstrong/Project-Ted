@@ -1,4 +1,9 @@
 # Project-Ted
+A collaborative effort between Jacob Armstrong (gameplay & [sounds](https://soundcloud.com/jacob-armstrong-2)) and [Jamie Dean](https://www.instagram.com/jamiedean.ig) (art & animation).  
+
+[Here's a video documenting the recent state of the game.](https://youtu.be/FPzYTsac9xk)
+
+See Wiki for controls.
 
 ## Gameplay plan
 
