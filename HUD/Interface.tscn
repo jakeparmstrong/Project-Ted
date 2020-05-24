@@ -8,7 +8,7 @@
 [ext_resource path="res://HUD/transparent_thing.png" type="Texture" id=6]
 [ext_resource path="res://HUD/EndText.gd" type="Script" id=7]
 [ext_resource path="res://HUD/FinalScoreLabel.gd" type="Script" id=8]
-[ext_resource path="res://Audio/pause.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/whltndn.wav" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -67,6 +67,7 @@ color = Color( 0, 0, 0, 0.215686 )
 [node name="PauseSound" type="AudioStreamPlayer" parent="PauseScreen"]
 pause_mode = 2
 stream = ExtResource( 9 )
+volume_db = 15.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PauseScreen"]
 anchor_left = 0.5

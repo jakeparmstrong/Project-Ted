@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Levels/Kitchen/NewKitchenTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Ted/Ted.tscn" type="PackedScene" id=2]
@@ -10,6 +10,21 @@
 [ext_resource path="res://Audio/BoneCollected.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Audio/YouLoseSound.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/Level2/PitSensor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Audio/bone_collected0.wav" type="AudioStream" id=11]
+[ext_resource path="res://Audio/bone_collected2.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/bone_collected1.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/bone_collected8.wav" type="AudioStream" id=14]
+[ext_resource path="res://Audio/bone_collected10.wav" type="AudioStream" id=15]
+[ext_resource path="res://Audio/bone_collected7.wav" type="AudioStream" id=16]
+[ext_resource path="res://Audio/bone_collected3.wav" type="AudioStream" id=17]
+[ext_resource path="res://Audio/bone_collected6.wav" type="AudioStream" id=18]
+[ext_resource path="res://Audio/bone_collected9.wav" type="AudioStream" id=19]
+[ext_resource path="res://Audio/bone_collected5.wav" type="AudioStream" id=20]
+[ext_resource path="res://Audio/bone_collected11.wav" type="AudioStream" id=21]
+[ext_resource path="res://Audio/bone_collected4.wav" type="AudioStream" id=22]
+[ext_resource path="res://Audio/sad.wav" type="AudioStream" id=23]
+[ext_resource path="res://Audio/happy.wav" type="AudioStream" id=24]
+[ext_resource path="res://Audio/whltnup.wav" type="AudioStream" id=26]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource( 6 )
@@ -105,11 +120,51 @@ position = Vector2( 3711.43, 543.401 )
 [node name="MovingPlatform2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5658.76, 313.457 )
 
-[node name="BoneCollected" parent="." instance=ExtResource( 8 )]
+[node name="BoneCollected0" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 11 )
+
+[node name="BoneCollected1" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 13 )
+
+[node name="BoneCollected2" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 12 )
+
+[node name="BoneCollected3" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 17 )
+
+[node name="BoneCollected4" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 22 )
+
+[node name="BoneCollected5" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 20 )
+
+[node name="BoneCollected6" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 18 )
+
+[node name="BoneCollected7" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 16 )
+
+[node name="BoneCollected8" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 14 )
+
+[node name="BoneCollected9" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 19 )
+
+[node name="BoneCollected10" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 15 )
+
+[node name="BoneCollected11" parent="." instance=ExtResource( 8 )]
+stream = ExtResource( 21 )
 
 [node name="YouLoseSound" parent="." instance=ExtResource( 9 )]
+stream = ExtResource( 23 )
 
 [node name="YouWinSound" parent="." instance=ExtResource( 7 )]
+stream = ExtResource( 24 )
+
+[node name="UnpauseGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = 15.0
 
 [node name="PitSensor" parent="." instance=ExtResource( 10 )]
 position = Vector2( 3392, 840 )

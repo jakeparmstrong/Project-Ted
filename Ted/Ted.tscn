@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Ted/TedJump/TED JUMP/JUMP_020.png" type="Texture" id=1]
 [ext_resource path="res://Ted/Ted.gd" type="Script" id=2]
-[ext_resource path="res://Audio/jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/plip.wav" type="AudioStream" id=3]
 [ext_resource path="res://Audio/plop.wav" type="AudioStream" id=4]
 [ext_resource path="res://Ted/TedWalk/TED WALK/TED_WALK_05.png" type="Texture" id=5]
 [ext_resource path="res://Ted/TedWalk/TED WALK/TED_WALK_01.png" type="Texture" id=6]
@@ -86,9 +86,7 @@ playing = true
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 3 )
-volume_db = -6.75
 
 [node name="PlopSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -16.103
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
