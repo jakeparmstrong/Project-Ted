@@ -6,9 +6,4 @@ A collaborative effort between Jacob Armstrong (gameplay & [sounds](https://soun
 [May 21 progress video - proof of concept](https://youtu.be/FPzYTsac9xk)  
 
 
-See Wiki for controls.
-
-## Gameplay plan
-
-### Kitchen Level
-Try to eat as much food in the house and run outside before the time runs out and Ted has an acccident. Future: Different food worth different amount of points
+See [Wiki](https://github.com/jakeparmstrong/Project-Ted/wiki) for controls.
