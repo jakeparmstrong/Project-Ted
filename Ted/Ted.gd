@@ -23,6 +23,7 @@ enum state_list{
 	windup,
 	jumping,
 	falling,
+	landing,
 }
 
 func _ready() -> void:
@@ -77,8 +78,8 @@ func _physics_process(delta: float) -> void:
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2(0, -1))
 	if just_landed():
-		state = state_list.idle
-		$AnimatedSprite.play("ted_stands")
+		state = state_list.landing
+		$AnimatedSprite.play("ted_lands")
 		PlopSound.play()
 	if !is_on_floor() and velocity.y > 0:
 		state = state_list.falling
@@ -94,6 +95,10 @@ func just_landed():
 	return retVal
 
 func _on_AnimatedSprite_animation_finished() -> void:
+	if state == state_list.landing:
+		state = state_list.idle
+		$AnimatedSprite.play("ted_stands")
+		
 	if state == state_list.windup:
 		state = state_list.jumping
 		$AnimatedSprite.play("ted_jump_up")
