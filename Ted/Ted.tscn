@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Ted/TedJump/TED JUMP/JUMP_020.png" type="Texture" id=1]
 [ext_resource path="res://Ted/Ted.gd" type="Script" id=2]
@@ -56,6 +56,14 @@
 [ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_02.png" type="Texture" id=54]
 [ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_04.png" type="Texture" id=55]
 [ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_07.png" type="Texture" id=56]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__03.png" type="Texture" id=57]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__04.png" type="Texture" id=58]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__05.png" type="Texture" id=59]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__06.png" type="Texture" id=60]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__00.png" type="Texture" id=61]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__01.png" type="Texture" id=62]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__02.png" type="Texture" id=63]
+[ext_resource path="res://Ted/TedTurn/TED_TURN__07.png" type="Texture" id=64]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 0.928609
@@ -63,6 +71,11 @@ height = 72.6155
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "ted_turns",
+"speed": 24.0
+}, {
 "frames": [ ExtResource( 38 ), ExtResource( 31 ), ExtResource( 45 ) ],
 "loop": false,
 "name": "ted_jump_windup",
@@ -73,9 +86,9 @@ animations = [ {
 "name": "ted_falling_old",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 20 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": false,
-"name": "ted_jump_windup_old",
+"name": "ted_jump_up",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
@@ -83,14 +96,14 @@ animations = [ {
 "name": "ted_jump_up_old",
 "speed": 24.0
 }, {
+"frames": [ ExtResource( 27 ), ExtResource( 20 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "ted_jump_windup_old",
+"speed": 24.0
+}, {
 "frames": [ ExtResource( 46 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 34 ) ],
 "loop": false,
 "name": "ted_falling",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": false,
-"name": "ted_jump_up",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -113,8 +126,8 @@ animations = [ {
 "name": "ted_lands",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 48 ) ],
-"loop": false,
+"frames": [ ExtResource( 55 ) ],
+"loop": true,
 "name": "ted_stands",
 "speed": 5.0
 } ]
@@ -137,9 +150,8 @@ shape = SubResource( 1 )
 position = Vector2( 0, -1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
-animation = "ted_falling"
+animation = "ted_turns"
 frame = 6
-playing = true
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

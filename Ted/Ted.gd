@@ -24,6 +24,7 @@ enum state_list{
 	jumping,
 	falling,
 	landing,
+	turning,
 }
 
 func _ready() -> void:
@@ -33,6 +34,9 @@ func get_input(delta):
 	if Input.is_action_just_pressed("ui_pause"):
 		emit_signal("pause_game")
 	if Input.is_action_pressed("player_walk_right"):
+		if !moving_right:
+			state = state_list.turning
+			$AnimatedSprite.play("ted_turns")
 		if state == state_list.idle:
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
@@ -40,6 +44,9 @@ func get_input(delta):
 		if velocity.x < walk_speed:
 			velocity.x += walk_accel * delta
 	elif Input.is_action_pressed("player_walk_left"):
+		if moving_right:
+			state = state_list.turning
+			$AnimatedSprite.play("ted_turns")
 		if state == state_list.idle:
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
@@ -95,6 +102,11 @@ func just_landed():
 	return retVal
 
 func _on_AnimatedSprite_animation_finished() -> void:
+	#this might be better practice if you just check which animation it is
+	if state == state_list.turning:
+		state = state_list.idle
+		$AnimatedSprite.play("ted_stands")
+		
 	if state == state_list.landing:
 		state = state_list.idle
 		$AnimatedSprite.play("ted_stands")

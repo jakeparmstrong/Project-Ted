@@ -57,22 +57,40 @@ func _on_Interface_time_out_external() -> void:
 
 func game_over(bone, time, reason):
 	get_tree().paused = true
-	var end_text
 	match reason:
 		gameover_reason.stage_clear:
-			end_text = "STAGE CLEAR"
-			YouWinSound.play()
+			win_handler(bone, time, reason)
 		gameover_reason.time_over:
-			end_text = "TIME OVER"
-			YouLoseSound.play()
+			loss_handler(bone, time, reason)
 		gameover_reason.death:
-			end_text = "GAME OVER"
-			YouLoseSound.play()
+			loss_handler(bone, time, reason)
+
+func loss_handler(bone, time, reason):
+	var end_text
+	if reason == gameover_reason.time_over:
+		end_text = "TIME OVER"
+	elif reason == gameover_reason.death:
+		end_text = "YOU LOSE"
 	EndText.set_text(end_text)
 	EndText.set_visible(true)
 	FinalScoreLabel.update_text(bone, time)
 	FinalScore.set_visible(true)
+	YouLoseSound.play()
+	yield(YouLoseSound, "finished")
+	Globals.lose_life()
+	print(Globals.get_life_count())
+	SceneChanger.change_scene("res://Levels/Level2/Level2.tscn")
 
+func win_handler(bone, time, reason):
+	var end_text
+	end_text = "STAGE CLEAR"
+	EndText.set_text(end_text)
+	EndText.set_visible(true)
+	FinalScoreLabel.update_text(bone, time)
+	FinalScore.set_visible(true)
+	YouWinSound.play()
+	yield(YouWinSound, "finished")
+	SceneChanger.change_scene("res://Levels/Kitchen/Kitchen.tscn")
 
 func _on_PitSensor_pit_entered() -> void:
 	var time_remaining = ClockLabel.get_clock_time()

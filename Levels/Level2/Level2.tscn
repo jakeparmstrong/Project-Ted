@@ -184,8 +184,8 @@ scale = Vector2( 5.78221, 1.04263 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 5 )]
-[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
