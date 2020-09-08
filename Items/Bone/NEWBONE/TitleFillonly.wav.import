@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TitleFillonly.wav-22abd2a0164c71726c2f0acde94125e7.sample"
+
+[deps]
+
+source_file="res://Items/Bone/NEWBONE/TitleFillonly.wav"
+dest_files=[ "res://.import/TitleFillonly.wav-22abd2a0164c71726c2f0acde94125e7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

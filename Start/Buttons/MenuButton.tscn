@@ -1,22 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Start/PressStart2P-vaV7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Start/Play Game.gd" type="Script" id=1]
+[ext_resource path="res://Start/Buttons/Start48.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Audio/boneget.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 48
-font_data = ExtResource( 1 )
+size = 30
+outline_color = Color( 0.00784314, 0.0470588, 0.176471, 1 )
+font_data = ExtResource( 3 )
 
-[node name="Label" type="Label"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-margin_right = -2.0
-margin_bottom = 28.0
+[node name="MenuButton" type="Button"]
+margin_right = 600.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 600, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 5
-text = "New Game"
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+custom_colors/font_color_hover = Color( 0.00392157, 0.0784314, 0.301961, 1 )
+action_mode = 0
+text = "Push Me"
+flat = true
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+scene_to_load = "\"res://Levels/Level2/Level2.tscn\""
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 5
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+[connection signal="pressed" from="." to="." method="_on_MenuButton_pressed"]

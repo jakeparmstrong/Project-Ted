@@ -1,21 +1,50 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://HUD/Counter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HUD/Label.gd" type="Script" id=2]
-[ext_resource path="res://HUD/boneicon.png" type="Texture" id=3]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_25.png" type="Texture" id=3]
 [ext_resource path="res://HUD/transparent_thing.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_27.png" type="Texture" id=6]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_26.png" type="Texture" id=7]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_28.png" type="Texture" id=8]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_29.png" type="Texture" id=9]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_46.png" type="Texture" id=10]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_47.png" type="Texture" id=11]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_31.png" type="Texture" id=12]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_41.png" type="Texture" id=13]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_48.png" type="Texture" id=14]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_35.png" type="Texture" id=15]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_38.png" type="Texture" id=16]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_40.png" type="Texture" id=17]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_36.png" type="Texture" id=18]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_44.png" type="Texture" id=19]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_33.png" type="Texture" id=20]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_30.png" type="Texture" id=21]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_43.png" type="Texture" id=22]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_45.png" type="Texture" id=23]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_32.png" type="Texture" id=24]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_37.png" type="Texture" id=25]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_34.png" type="Texture" id=26]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_49.png" type="Texture" id=27]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_39.png" type="Texture" id=28]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_42.png" type="Texture" id=29]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0.682353, 0.388235, 0.388235, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 26 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 16 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 29 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="BoneCounter" instance=ExtResource( 1 )]
-anchor_top = -0.005
-anchor_right = 0.00976563
-anchor_bottom = -0.005
 texture = ExtResource( 4 )
 
 [node name="Node" type="Node" parent="." index="0"]
@@ -25,7 +54,7 @@ margin_left = 11.0
 margin_top = 26.0
 margin_right = 244.0
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
 text = "12/12"
 script = ExtResource( 2 )
@@ -33,7 +62,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
-position = Vector2( 287.228, 78.8272 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 3 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+position = Vector2( 266.342, 83.8979 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+playing = true

@@ -1,13 +1,54 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Start/Logo.png" type="Texture" id=1]
-[ext_resource path="res://Start/Buttons/MenuButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Start/Play Game.gd" type="Script" id=3]
+[ext_resource path="res://Start/Buttons/NewGameButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Start/Buttons/optButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Start/Title Screen.gd" type="Script" id=4]
-[ext_resource path="res://Start/Controls.gd" type="Script" id=5]
-[ext_resource path="res://Start/Options.gd" type="Script" id=6]
+[ext_resource path="res://Start/Buttons/ControlsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/TedsTitle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Audio/TedTitlecont.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/TitleFill.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Audio/TitlewithFill.wav" type="AudioStream" id=10]
+[ext_resource path="res://Audio/TedsTitle.gd" type="Script" id=11]
+[ext_resource path="res://Audio/TitleFill.gd" type="Script" id=12]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_08.png" type="Texture" id=13]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_03.png" type="Texture" id=14]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_06.png" type="Texture" id=15]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_10.png" type="Texture" id=16]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_02.png" type="Texture" id=17]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_04.png" type="Texture" id=18]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_01.png" type="Texture" id=19]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_05.png" type="Texture" id=20]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_07.png" type="Texture" id=21]
+[ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_09.png" type="Texture" id=22]
+[ext_resource path="res://HUD/transparent_thing.png" type="Texture" id=23]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+font_data = ExtResource( 7 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 7 )
 
 [node name="Title Screen" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -16,21 +57,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="VBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0.411765, 0.560784, 0.788235, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Logo" type="TextureRect" parent="Menu"]
+[node name="TedsTitle" parent="." instance=ExtResource( 6 )]
+stream = ExtResource( 8 )
+script = ExtResource( 11 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu"]
 margin_right = 1024.0
-margin_bottom = 89.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 256 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+text = "Ted's Troubles"
+align = 1
+valign = 1
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+pause_mode = 2
+visible = false
+margin_top = 52.0
+margin_right = 1024.0
+margin_bottom = 141.0
 texture = ExtResource( 1 )
 stretch_mode = 4
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_top = 93.0
+pause_mode = 2
+margin_top = 260.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_vertical = 3
@@ -40,60 +114,114 @@ __meta__ = {
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 1024.0
-margin_bottom = 507.0
+margin_bottom = 340.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play Game" type="Button" parent="Menu/CenterRow/Buttons"]
+[node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
 margin_right = 1024.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 600, 100 )
-mouse_filter = 1
-action_mode = 0
-flat = true
-script = ExtResource( 3 )
-scene_to_load = "\"res://Levels/Level2/Level2.tscn\""
-
-[node name="Label" parent="Menu/CenterRow/Buttons/Play Game" instance=ExtResource( 2 )]
-margin_top = -1.0
-margin_bottom = 27.0
-mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
 text = "Play Game"
-align = 1
 
-[node name="Controls" type="Button" parent="Menu/CenterRow/Buttons"]
+[node name="Controls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 104.0
 margin_right = 1024.0
 margin_bottom = 204.0
-rect_min_size = Vector2( 600, 100 )
-mouse_filter = 1
-flat = true
-script = ExtResource( 5 )
-scene_to_load = "\"res://Levels/Level2/Level2.tscn\""
-
-[node name="Label" parent="Menu/CenterRow/Buttons/Controls" instance=ExtResource( 2 )]
-margin_left = 0.789551
-margin_right = 0.789551
-mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
 text = "Controls"
-align = 1
 
-[node name="Options" type="Button" parent="Menu/CenterRow/Buttons"]
+[node name="Options" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 visible = false
 margin_top = 208.0
-margin_right = 896.0
 margin_bottom = 308.0
-rect_min_size = Vector2( 600, 100 )
-mouse_filter = 1
-flat = true
-script = ExtResource( 6 )
-scene_to_load = "\"res://Levels/Level2/Level2.tscn\""
+custom_fonts/font = SubResource( 2 )
+text = "wtf"
+flat = false
 
-[node name="Label" parent="Menu/CenterRow/Buttons/Options" instance=ExtResource( 2 )]
-mouse_filter = 1
-text = "Options"
+[node name="Credits" type="Label" parent="."]
+margin_left = 1.94806
+margin_top = 500.0
+margin_right = 1025.95
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+text = "Art and Animation: Jamie Dean
+Gameplay and Music: Jacob Armstrong"
 align = 1
-[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/Play Game" to="." method="_on_Play_Game_mouse_entered"]
-[connection signal="pressed" from="Menu/CenterRow/Buttons/Play Game" to="." method="_on_Play_Game_pressed"]
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleFill" parent="." instance=ExtResource( 9 )]
+stream = ExtResource( 10 )
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 499.312, 211.708 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 4 )
+frame = 5
+playing = true
+
+[node name="ControlsWindow" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.596078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitControlWindowButton" type="Button" parent="ControlsWindow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ControlsWindow"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.0
+margin_top = -75.0
+margin_right = 270.0
+margin_bottom = 75.0
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ControlsWindow/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -55.5
+margin_right = 200.0
+margin_bottom = 55.5
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+text = "Controls
+
+Move left      Left arrow
+Move right    Right arrow
+Jump            Space bar
+Pause/Unpause         Esc"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finished" from="TedsTitle" to="." method="_on_TedsTitle_finished"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="finished" from="TitleFill" to="." method="_on_TitleFill_finished"]
+[connection signal="pressed" from="ControlsWindow/ExitControlWindowButton" to="." method="_on_ExitControlWindowButton_pressed"]

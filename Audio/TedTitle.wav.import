@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TedTitle.wav-4d6707fe46b21f57f3f528f2f8c7b936.sample"
+
+[deps]
+
+source_file="res://Audio/TedTitle.wav"
+dest_files=[ "res://.import/TedTitle.wav-4d6707fe46b21f57f3f528f2f8c7b936.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD/transparent_thing.png" type="Texture" id=2]
+[ext_resource path="res://Ted/TedClear.png" type="Texture" id=3]
+[ext_resource path="res://HUD/LifeLabel.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="LifeCounter" type="NinePatchRect"]
+margin_left = 601.876
+margin_top = 5.14423
+margin_right = 701.876
+margin_bottom = 60.1442
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 73.8486, 27.3383 )
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 7.64147
+margin_top = 15.0188
+margin_right = 51.6415
+margin_bottom = 44.0188
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+text = "03"
+align = 1
+valign = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node" type="Node" parent="."]

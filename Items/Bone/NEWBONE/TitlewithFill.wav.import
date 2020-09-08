@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TitlewithFill.wav-1a6e767dc99784f7c1a3ee281dbabe77.sample"
+
+[deps]
+
+source_file="res://Items/Bone/NEWBONE/TitlewithFill.wav"
+dest_files=[ "res://.import/TitlewithFill.wav-1a6e767dc99784f7c1a3ee281dbabe77.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

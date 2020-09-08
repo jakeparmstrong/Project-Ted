@@ -1,6 +1,6 @@
 extends Node
 
-onready var life_count = 3
+onready var life_count = 2
 
 func lose_life():
 	life_count -= 1

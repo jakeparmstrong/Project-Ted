@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tedLevelSong.wav-68606c866843e5c6afff3b61f6680658.sample"
+
+[deps]
+
+source_file="res://Audio/tedLevelSong.wav"
+dest_files=[ "res://.import/tedLevelSong.wav-68606c866843e5c6afff3b61f6680658.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Earth PlatformTiles64.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Node" type="Node"]
+
+[node name="LeftGreen" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LeftGreen"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGreen/StaticBody2D"]
+position = Vector2( 28, -24 )
+scale = Vector2( 0.4, 0.811 )
+shape = SubResource( 1 )
+
+[node name="CentreGreen" type="Sprite" parent="."]
+position = Vector2( 160, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CentreGreen"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CentreGreen/StaticBody2D"]
+position = Vector2( 0, -24 )
+scale = Vector2( 3.17825, 0.781911 )
+shape = SubResource( 1 )
+
+[node name="RightGreen" type="Sprite" parent="."]
+position = Vector2( 288, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RightGreen"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGreen/StaticBody2D"]
+position = Vector2( -28, -24 )
+scale = Vector2( 0.4, 0.811 )
+shape = SubResource( 1 )
+
+[node name="LeftBrown" type="Sprite" parent="."]
+position = Vector2( 32, 160 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LeftBrown"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBrown/StaticBody2D"]
+position = Vector2( 28, -24 )
+scale = Vector2( 0.4, 0.811 )
+shape = SubResource( 1 )
+
+[node name="CentreBrown" type="Sprite" parent="."]
+position = Vector2( 160, 160 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CentreBrown"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CentreBrown/StaticBody2D"]
+position = Vector2( 0, -24 )
+scale = Vector2( 3.17825, 0.781911 )
+shape = SubResource( 1 )
+
+[node name="RightBrown" type="Sprite" parent="."]
+position = Vector2( 288, 160 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RightBrown"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBrown/StaticBody2D"]
+position = Vector2( -28, -24 )
+scale = Vector2( 0.4, 0.811 )
+shape = SubResource( 1 )

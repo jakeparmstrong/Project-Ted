@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Ted/TedJump/TED JUMP/JUMP_020.png" type="Texture" id=1]
 [ext_resource path="res://Ted/Ted.gd" type="Script" id=2]
@@ -29,7 +29,6 @@
 [ext_resource path="res://Ted/TedJump/TED JUMP/JUMP_016.png" type="Texture" id=27]
 [ext_resource path="res://Ted/TedJump/TED JUMP/JUMP_030.png" type="Texture" id=28]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_13.png" type="Texture" id=29]
-[ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_16.png" type="Texture" id=30]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_01.png" type="Texture" id=31]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_03.png" type="Texture" id=32]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_09.png" type="Texture" id=33]
@@ -41,9 +40,7 @@
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_06.png" type="Texture" id=39]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_07.png" type="Texture" id=40]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_11.png" type="Texture" id=41]
-[ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_15.png" type="Texture" id=42]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_12.png" type="Texture" id=43]
-[ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_17.png" type="Texture" id=44]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_02.png" type="Texture" id=45]
 [ext_resource path="res://Ted/TedJump/TEDJUMPJUNE22/TED_JUMP_08.png" type="Texture" id=46]
 [ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_08.png" type="Texture" id=47]
@@ -64,6 +61,28 @@
 [ext_resource path="res://Ted/TedTurn/TED_TURN__01.png" type="Texture" id=62]
 [ext_resource path="res://Ted/TedTurn/TED_TURN__02.png" type="Texture" id=63]
 [ext_resource path="res://Ted/TedTurn/TED_TURN__07.png" type="Texture" id=64]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_00.png" type="Texture" id=65]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_01.png" type="Texture" id=66]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_02.png" type="Texture" id=67]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_03.png" type="Texture" id=68]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_07.png" type="Texture" id=69]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_05.png" type="Texture" id=70]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_06.png" type="Texture" id=71]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_08.png" type="Texture" id=72]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_09.png" type="Texture" id=73]
+[ext_resource path="res://Ted/TedWalk/TED WALK JULY 1/TED_WALK_04.png" type="Texture" id=74]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_09.png" type="Texture" id=75]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_06.png" type="Texture" id=76]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_11.png" type="Texture" id=77]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_12.png" type="Texture" id=78]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_03.png" type="Texture" id=79]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_04.png" type="Texture" id=80]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_01.png" type="Texture" id=81]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_02.png" type="Texture" id=82]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_07.png" type="Texture" id=83]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_08.png" type="Texture" id=84]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_10.png" type="Texture" id=85]
+[ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_05.png" type="Texture" id=86]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 0.928609
@@ -71,31 +90,6 @@ height = 72.6155
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
-"loop": true,
-"name": "ted_turns",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 38 ), ExtResource( 31 ), ExtResource( 45 ) ],
-"loop": false,
-"name": "ted_jump_windup",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 28 ) ],
-"loop": false,
-"name": "ted_falling_old",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": false,
-"name": "ted_jump_up",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "ted_jump_up_old",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 27 ), ExtResource( 20 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "ted_jump_windup_old",
@@ -103,7 +97,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 46 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 34 ) ],
 "loop": false,
-"name": "ted_falling",
+"name": "ted_falling_j22",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -111,25 +105,70 @@ animations = [ {
 "name": "ted_stands_old",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "ted_walks_old",
+"frames": [ ExtResource( 75 ), ExtResource( 85 ), ExtResource( 77 ), ExtResource( 78 ) ],
+"loop": false,
+"name": "ted_falling",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 48 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ) ],
-"loop": true,
-"name": "ted_walks",
+"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
+"loop": false,
+"name": "ted_turns",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 42 ), ExtResource( 30 ), ExtResource( 44 ) ],
+"frames": [ ExtResource( 69 ) ],
+"loop": false,
+"name": "ted_stands",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 31 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "ted_jump_windup_j22",
+"speed": 24.0
+}, {
+"frames": [  ],
 "loop": false,
 "name": "ted_lands",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 55 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "ted_jump_up_old",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": false,
+"name": "ted_jump_windup",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 82 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 86 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 84 ) ],
+"loop": false,
+"name": "ted_jump_up",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": false,
+"name": "ted_jump_up_j22",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "ted_falling_old",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 74 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 69 ), ExtResource( 72 ), ExtResource( 73 ) ],
 "loop": true,
-"name": "ted_stands",
-"speed": 5.0
+"name": "ted_walks",
+"speed": 36.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 48 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "ted_walks_june22",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "ted_walks_old",
+"speed": 24.0
 } ]
 
 [node name="Ted" type="KinematicBody2D" groups=[
@@ -142,7 +181,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 10, 12 )
+position = Vector2( 0, 12 )
 scale = Vector2( 50, 1 )
 shape = SubResource( 1 )
 
@@ -150,13 +189,15 @@ shape = SubResource( 1 )
 position = Vector2( 0, -1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
-animation = "ted_turns"
-frame = 6
+animation = "ted_walks"
+frame = 5
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 3 )
+volume_db = -10.0
 
 [node name="PlopSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -10.0
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

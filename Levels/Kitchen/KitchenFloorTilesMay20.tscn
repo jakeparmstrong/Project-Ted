@@ -140,3 +140,147 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left1/StaticBody2D"]
 position = Vector2( 63, 32 )
 shape = SubResource( 3 )
+
+[node name="full7" type="Sprite" parent="."]
+position = Vector2( 512, 0 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="full7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="full7/StaticBody2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 1 )
+
+[node name="full6" type="Sprite" parent="."]
+position = Vector2( 512, 128 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="full6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="full6/StaticBody2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 1 )
+
+[node name="full5" type="Sprite" parent="."]
+position = Vector2( 512, 256 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 128, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="full5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="full5/StaticBody2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 1 )
+
+[node name="full4" type="Sprite" parent="."]
+position = Vector2( 512, 384 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 128, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="full4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="full4/StaticBody2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 1 )
+
+[node name="right3" type="Sprite" parent="."]
+position = Vector2( 640, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="right3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right3/StaticBody2D"]
+position = Vector2( 0.98349, 32.0411 )
+shape = SubResource( 2 )
+
+[node name="right2" type="Sprite" parent="."]
+position = Vector2( 640, 128 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="right2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right2/StaticBody2D"]
+position = Vector2( 0.98349, 32.0411 )
+shape = SubResource( 2 )
+
+[node name="left5" type="Sprite" parent="."]
+position = Vector2( 384, 0 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="left5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left5/StaticBody2D"]
+position = Vector2( 63, 32 )
+shape = SubResource( 3 )
+
+[node name="left4" type="Sprite" parent="."]
+position = Vector2( 384, 128 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="left4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left4/StaticBody2D"]
+position = Vector2( 63, 32 )
+shape = SubResource( 3 )
+
+[node name="left3" type="Sprite" parent="."]
+position = Vector2( 384, 128 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="left3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left3/StaticBody2D"]
+position = Vector2( 63, 32 )
+shape = SubResource( 3 )

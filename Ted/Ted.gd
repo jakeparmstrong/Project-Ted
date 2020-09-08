@@ -23,8 +23,8 @@ enum state_list{
 	windup,
 	jumping,
 	falling,
-	landing,
 	turning,
+#	landing,
 }
 
 func _ready() -> void:
@@ -64,9 +64,9 @@ func get_input(delta):
 			if state == state_list.idle or state == state_list.walking:
 				state = state_list.windup
 				$AnimatedSprite.play("ted_jump_windup")
-				JumpSound.play()
-		jump_button_timer += delta
-		velocity.y -= gravity_scale * (jump_multiplier - 1)
+		if state == state_list.jumping:
+			jump_button_timer += delta
+			velocity.y -= gravity_scale * (jump_multiplier - 1)
 	if is_on_floor() and !Input.is_action_pressed("player_jump"): 
 		allow_jump = true
 		jump_button_timer = 0
@@ -85,8 +85,10 @@ func _physics_process(delta: float) -> void:
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2(0, -1))
 	if just_landed():
-		state = state_list.landing
-		$AnimatedSprite.play("ted_lands")
+#		state = state_list.landing
+#		$AnimatedSprite.play("ted_lands")
+		state = state_list.idle
+		$AnimatedSprite.play("ted_stands")
 		PlopSound.play()
 	if !is_on_floor() and velocity.y > 0:
 		state = state_list.falling
@@ -107,10 +109,24 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		state = state_list.idle
 		$AnimatedSprite.play("ted_stands")
 		
-	if state == state_list.landing:
-		state = state_list.idle
-		$AnimatedSprite.play("ted_stands")
+#	if state == state_list.landing:
+#		state = state_list.idle
+#		$AnimatedSprite.play("ted_stands")
 		
 	if state == state_list.windup:
-		state = state_list.jumping
-		$AnimatedSprite.play("ted_jump_up")
+		if !Input.is_action_pressed("player_jump"):
+			state = state_list.idle
+			$AnimatedSprite.play("ted_stands")
+		else:
+			state = state_list.jumping
+			$AnimatedSprite.play("ted_jump_up")
+			JumpSound.play()
+
+	if state == state_list.jumping and !Input.is_action_pressed("player_jump"):
+		state = state_list.falling
+		$AnimatedSprite.play("ted_falling")
+
+	if state == state_list.falling and is_on_floor():
+		state = state_list.idle
+		$AnimatedSprite.play("ted_stands")
+	

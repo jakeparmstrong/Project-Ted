@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Sept4Level/EarthyPlatformTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Kitchen/MovingPlatform.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.73948, 9.6759 )
+
+[node name="GrassyPlatform" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="MoveTween" type="Tween" parent="."]
+repeat = true
+playback_process_mode = 0
+playback/repeat = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 65534, 0, 0, 65535, 1, 0, 0, 1, 0, 1, 2, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+scale = Vector2( 25.5765, 0.746845 )
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2( 0, 9.37276 )
+rotation = -6.28318
+shape = SubResource( 1 )
+one_way_collision_margin = 4.7

@@ -1,10 +1,26 @@
 extends Control
 
+onready var TitleTheme = get_node("TitleFill")
 
-func _on_Play_Game_pressed() -> void:
-	print("hi")
-	SceneChanger.change_scene("res://Levels/Level2/Level2.tscn")		
+func _ready() -> void:
+	TitleTheme.play()
+
+func _on_NewGame_pressed() -> void:
+	#SceneChanger.change_scene("res://Levels/Sept4Level/September4Level.tscn")
+	SceneChanger.change_scene("res://Levels/Level2/Level2.tscn")
 
 
-func _on_Play_Game_mouse_entered() -> void:
-	print("hi") # Replace with function body.
+func _on_Controls_pressed() -> void:
+	get_node("ControlsWindow").visible = true
+	#SceneChanger.change_scene("res://Controls/Controls.tscn")
+
+
+func _on_TitleFill_finished() -> void:
+	TitleTheme.play()
+
+func _on_TedsTitle_finished() -> void:
+	TitleTheme.stream = load("TedsTitle")
+	TitleTheme.play()
+
+func _on_ExitControlWindowButton_pressed() -> void:
+	get_node("ControlsWindow").visible = false

@@ -1,0 +1,96 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Audio/gameover.wav" type="AudioStream" id=1]
+[ext_resource path="res://GameOver/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Start/Buttons/MenuButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_31.png" type="Texture" id=5]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_30.png" type="Texture" id=6]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_42.png" type="Texture" id=7]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_46.png" type="Texture" id=8]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_40.png" type="Texture" id=9]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_45.png" type="Texture" id=10]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_34.png" type="Texture" id=11]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_38.png" type="Texture" id=12]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_33.png" type="Texture" id=13]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_43.png" type="Texture" id=14]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_25.png" type="Texture" id=15]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_26.png" type="Texture" id=16]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_27.png" type="Texture" id=17]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_28.png" type="Texture" id=18]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_29.png" type="Texture" id=19]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_47.png" type="Texture" id=20]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_48.png" type="Texture" id=21]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_44.png" type="Texture" id=22]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_35.png" type="Texture" id=23]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_49.png" type="Texture" id=24]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_37.png" type="Texture" id=25]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_39.png" type="Texture" id=26]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_32.png" type="Texture" id=27]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_41.png" type="Texture" id=28]
+[ext_resource path="res://Items/Bone/NEWBONE/BONE-Hover_36.png" type="Texture" id=29]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 27 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 12 ), ExtResource( 26 ), ExtResource( 9 ), ExtResource( 28 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.411765, 0.560784, 0.788235, 1 )
+
+[node name="GameOverSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -375.0
+margin_top = -149.5
+margin_right = 375.0
+margin_bottom = 149.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 749.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="ResetButton" parent="VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 154.0
+margin_right = 749.0
+margin_bottom = 254.0
+text = "Play Again"
+
+[node name="Bone" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+offset = Vector2( 1024, 950 )
+[connection signal="pressed" from="VBoxContainer/ResetButton" to="." method="_on_ResetButton_pressed"]
