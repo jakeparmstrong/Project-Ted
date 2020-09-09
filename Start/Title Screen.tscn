@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Start/Logo.png" type="Texture" id=1]
 [ext_resource path="res://Start/Buttons/NewGameButton.tscn" type="PackedScene" id=2]
@@ -23,13 +23,14 @@
 [ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_07.png" type="Texture" id=21]
 [ext_resource path="res://Ted/TedWalk/TED WALK JUNE 22/TED_WALK_09.png" type="Texture" id=22]
 [ext_resource path="res://HUD/transparent_thing.png" type="Texture" id=23]
+[ext_resource path="res://Start/Buttons/MenuButton.tscn" type="PackedScene" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 30
+size = 24
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -122,23 +123,35 @@ __meta__ = {
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
 margin_right = 1024.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 600, 60 )
 custom_fonts/font = SubResource( 2 )
 text = "Play Game"
 
 [node name="Controls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
-margin_top = 104.0
+margin_top = 64.0
 margin_right = 1024.0
-margin_bottom = 204.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 600, 60 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
-text = "Controls"
+text = "Keyboard Controls"
+
+[node name="GamepadControls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 24 )]
+margin_top = 128.0
+margin_right = 1024.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 600, 60 )
+text = "Gamepad Controls"
 
 [node name="Options" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 visible = false
-margin_top = 208.0
-margin_bottom = 308.0
+margin_top = 192.0
+margin_right = 1024.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 600, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "wtf"
+text = "Options"
 flat = false
 
 [node name="Credits" type="Label" parent="."]
@@ -164,7 +177,7 @@ script = ExtResource( 12 )
 position = Vector2( 499.312, 211.708 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 4 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="ControlsWindow" type="ColorRect" parent="."]
@@ -220,8 +233,65 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ControlsWindow2" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.596078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitControlWindowButton" type="Button" parent="ControlsWindow2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ControlsWindow2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.0
+margin_top = -75.0
+margin_right = 270.0
+margin_bottom = 125.0
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ControlsWindow2/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -55.5
+margin_right = 200.0
+margin_bottom = 55.5
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
+text = "Gamepad Controls
+
+Move left      Left D-Pad
+Move right    Right D-Pad
+Run                     X
+Jump                    A
+Pause/Unpause     Options"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="finished" from="TedsTitle" to="." method="_on_TedsTitle_finished"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/GamepadControls" to="." method="_on_GamepadControls_pressed"]
 [connection signal="finished" from="TitleFill" to="." method="_on_TitleFill_finished"]
 [connection signal="pressed" from="ControlsWindow/ExitControlWindowButton" to="." method="_on_ExitControlWindowButton_pressed"]
+[connection signal="pressed" from="ControlsWindow2/ExitControlWindowButton" to="." method="_on_ExitControlWindowButton_pressed"]

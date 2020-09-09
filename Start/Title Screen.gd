@@ -24,3 +24,8 @@ func _on_TedsTitle_finished() -> void:
 
 func _on_ExitControlWindowButton_pressed() -> void:
 	get_node("ControlsWindow").visible = false
+	get_node("ControlsWindow2").visible = false
+
+
+func _on_GamepadControls_pressed() -> void:
+	get_node("ControlsWindow2").visible = true

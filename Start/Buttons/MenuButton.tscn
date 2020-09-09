@@ -6,7 +6,7 @@
 [ext_resource path="res://Audio/boneget.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 30
+size = 24
 outline_color = Color( 0.00784314, 0.0470588, 0.176471, 1 )
 font_data = ExtResource( 3 )
 

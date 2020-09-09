@@ -5,6 +5,8 @@ signal pause_game
 var moving_right
 var velocity = Vector2()
 var walk_speed = 350
+var run_speed = 700
+var top_speed = walk_speed
 var walk_accel = 1000
 var gravity_scale = 500
 var jump_multiplier = 3.5
@@ -25,6 +27,7 @@ enum state_list{
 	falling,
 	turning,
 #	landing,
+#	running, //Don't need a enw state for this, yet.
 }
 
 func _ready() -> void:
@@ -33,6 +36,10 @@ func _ready() -> void:
 func get_input(delta):
 	if Input.is_action_just_pressed("ui_pause"):
 		emit_signal("pause_game")
+	if Input.is_action_pressed("player_run") and not Input.is_action_just_pressed("player_jump"):
+		top_speed = run_speed
+	else:
+		top_speed = walk_speed
 	if Input.is_action_pressed("player_walk_right"):
 		if !moving_right:
 			state = state_list.turning
@@ -41,8 +48,10 @@ func get_input(delta):
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
 		moving_right = true
-		if velocity.x < walk_speed:
+		if velocity.x < top_speed:
 			velocity.x += walk_accel * delta
+		elif velocity.x > top_speed:
+			velocity.x -= walk_accel * delta
 	elif Input.is_action_pressed("player_walk_left"):
 		if moving_right:
 			state = state_list.turning
@@ -51,8 +60,10 @@ func get_input(delta):
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
 		moving_right = false
-		if velocity.x > -walk_speed:
+		if velocity.x > -top_speed:
 			velocity.x -= walk_accel * delta
+		elif velocity.x < -top_speed:
+			velocity.x += walk_accel * delta
 	else:
 		if velocity.x != 0:
 			velocity.x /=  1.5
@@ -61,6 +72,7 @@ func get_input(delta):
 			$AnimatedSprite.play("ted_stands")
 	if Input.is_action_pressed("player_jump") and jump_button_timer < 0.2 and allow_jump:
 		if Input.is_action_just_pressed("player_jump"):
+			print("just pressed ok")
 			if state == state_list.idle or state == state_list.walking:
 				state = state_list.windup
 				$AnimatedSprite.play("ted_jump_windup")
