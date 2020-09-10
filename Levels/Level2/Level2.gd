@@ -81,7 +81,6 @@ func loss_handler(bone, time, reason):
 	YouLoseSound.play()
 	yield(YouLoseSound, "finished")
 	Globals.lose_life()
-	print(Globals.get_life_count())
 	if Globals.get_life_count() < 0:
 		SceneChanger.change_scene("res://GameOver/GameOver.tscn")
 	else:

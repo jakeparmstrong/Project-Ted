@@ -54,26 +54,20 @@ texture = ExtResource( 1 )
 [node name="StaticBody2D" parent="left1" index="0"]
 visible = false
 
-[node name="left2" parent="." index="8"]
-position = Vector2( 0, 256 )
-
-[node name="StaticBody2D" parent="left2" index="0"]
-visible = false
-
-[node name="full7" parent="." index="9"]
+[node name="full7" parent="." index="8"]
 texture = ExtResource( 3 )
 
 [node name="StaticBody2D" parent="full7" index="0"]
 visible = false
 
-[node name="full6" parent="." index="10"]
+[node name="full6" parent="." index="9"]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 64, 64, 64 )
 
 [node name="StaticBody2D" parent="full6" index="0"]
 visible = false
 
-[node name="full5" parent="." index="11"]
+[node name="full5" parent="." index="10"]
 texture = ExtResource( 3 )
 
 [node name="StaticBody2D" parent="full5" index="0"]
@@ -82,7 +76,7 @@ visible = false
 [node name="StaticBody2D" parent="full4" index="0"]
 visible = false
 
-[node name="right3" parent="." index="13"]
+[node name="right3" parent="." index="12"]
 texture = ExtResource( 3 )
 
 [node name="StaticBody2D" parent="right3" index="0"]
@@ -91,7 +85,7 @@ visible = false
 [node name="StaticBody2D" parent="right2" index="0"]
 visible = false
 
-[node name="left5" parent="." index="15"]
+[node name="left5" parent="." index="14"]
 texture = ExtResource( 3 )
 region_rect = Rect2( 64, 64, 64, 64 )
 

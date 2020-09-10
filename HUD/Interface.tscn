@@ -43,9 +43,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -144.0
-margin_top = -105.317
+margin_top = -24.0002
 margin_right = 144.0
-margin_bottom = -57.3166
+margin_bottom = 24.0002
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.635294, 0.113725, 0.113725, 1 )
 custom_colors/font_color_shadow = Color( 0.345098, 0, 0, 1 )
@@ -58,12 +58,14 @@ __meta__ = {
 }
 
 [node name="BlackOverlay" type="ColorRect" parent="PauseScreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -373.0
-margin_top = -197.0
-margin_right = 363.0
-margin_bottom = 355.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -525.0
+margin_top = -325.0
+margin_right = 525.0
+margin_bottom = 325.0
 color = Color( 0, 0, 0, 0.215686 )
 
 [node name="PauseSound" type="AudioStreamPlayer" parent="PauseScreen"]
@@ -71,6 +73,7 @@ pause_mode = 2
 stream = ExtResource( 9 )
 
 [node name="ControlsDisplayBox" type="NinePatchRect" parent="PauseScreen"]
+visible = false
 margin_left = -125.0
 margin_top = 75.0
 margin_right = 407.0

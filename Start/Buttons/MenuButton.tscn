@@ -12,8 +12,8 @@ font_data = ExtResource( 3 )
 
 [node name="MenuButton" type="Button"]
 margin_right = 600.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 600, 100 )
+margin_bottom = 60.0
+rect_min_size = Vector2( 600, 60 )
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )

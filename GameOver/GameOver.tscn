@@ -72,7 +72,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 749.0
+margin_right = 750.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 0, 150 )
 custom_fonts/font = SubResource( 1 )
@@ -83,14 +83,15 @@ valign = 1
 
 [node name="ResetButton" parent="VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 154.0
-margin_right = 749.0
-margin_bottom = 254.0
+margin_right = 750.0
+margin_bottom = 214.0
+custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
 text = "Play Again"
 
 [node name="Bone" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-frame = 1
+frame = 20
 playing = true
 offset = Vector2( 1024, 950 )
 [connection signal="pressed" from="VBoxContainer/ResetButton" to="." method="_on_ResetButton_pressed"]

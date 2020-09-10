@@ -27,7 +27,7 @@ enum state_list{
 	falling,
 	turning,
 #	landing,
-#	running, //Don't need a enw state for this, yet.
+#	running, //Don't need a new state for this, yet.
 }
 
 func _ready() -> void:
@@ -72,8 +72,7 @@ func get_input(delta):
 			$AnimatedSprite.play("ted_stands")
 	if Input.is_action_pressed("player_jump") and jump_button_timer < 0.2 and allow_jump:
 		if Input.is_action_just_pressed("player_jump"):
-			print("just pressed ok")
-			if state == state_list.idle or state == state_list.walking:
+			if state == state_list.idle or state == state_list.walking or state == state_list.turning:
 				state = state_list.windup
 				$AnimatedSprite.play("ted_jump_windup")
 		if state == state_list.jumping:
