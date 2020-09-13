@@ -95,9 +95,29 @@ animations = [ {
 "name": "ted_walks_old",
 "speed": 24.0
 }, {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 48 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "ted_walks_june22",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": false,
+"name": "ted_jump_windup",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "ted_jump_up_old",
+"speed": 24.0
+}, {
 "frames": [ ExtResource( 27 ), ExtResource( 20 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "ted_jump_windup_old",
+"speed": 24.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "ted_lands",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 38 ), ExtResource( 31 ), ExtResource( 45 ) ],
@@ -113,16 +133,6 @@ animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 28 ) ],
 "loop": false,
 "name": "ted_falling_old",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "ted_jump_up_old",
-"speed": 24.0
-}, {
-"frames": [  ],
-"loop": false,
-"name": "ted_lands",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -158,16 +168,6 @@ animations = [ {
 "frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
 "loop": false,
 "name": "ted_turns",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 48 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ) ],
-"loop": true,
-"name": "ted_walks_june22",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 81 ) ],
-"loop": false,
-"name": "ted_jump_windup",
 "speed": 24.0
 } ]
 

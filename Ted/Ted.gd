@@ -43,8 +43,8 @@ func get_input(delta):
 	if Input.is_action_pressed("player_walk_right"):
 		if !moving_right and (state == state_list.walking or state == state_list.idle):
 			state = state_list.turning
+			velocity.x = 0
 			$AnimatedSprite.play("ted_turns")
-			print("Turning right")
 		if state == state_list.idle:
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
@@ -57,7 +57,7 @@ func get_input(delta):
 		if moving_right and (state == state_list.walking or state == state_list.idle):
 			state = state_list.turning
 			$AnimatedSprite.play("ted_turns")
-			print("Turning left")
+			velocity.x = 0
 		if state == state_list.idle:
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
