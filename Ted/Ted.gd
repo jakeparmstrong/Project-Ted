@@ -41,9 +41,10 @@ func get_input(delta):
 	else:
 		top_speed = walk_speed
 	if Input.is_action_pressed("player_walk_right"):
-		if !moving_right:
+		if !moving_right and (state == state_list.walking or state == state_list.idle):
 			state = state_list.turning
 			$AnimatedSprite.play("ted_turns")
+			print("Turning right")
 		if state == state_list.idle:
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
@@ -53,9 +54,10 @@ func get_input(delta):
 		elif velocity.x > top_speed:
 			velocity.x -= walk_accel * delta
 	elif Input.is_action_pressed("player_walk_left"):
-		if moving_right:
+		if moving_right and (state == state_list.walking or state == state_list.idle):
 			state = state_list.turning
 			$AnimatedSprite.play("ted_turns")
+			print("Turning left")
 		if state == state_list.idle:
 			state = state_list.walking
 			$AnimatedSprite.play("ted_walks")
@@ -87,8 +89,10 @@ func get_input(delta):
 		allow_jump = false
 	if not moving_right:
 		$AnimatedSprite.set_flip_h(true)
+		#$CollisionShape2D.set_position(Vector2(-25,12))
 	else:
 		$AnimatedSprite.set_flip_h(false)
+		#$CollisionShape2D.set_position(Vector2(25,12))
 
 func _physics_process(delta: float) -> void:
 	velocity.y = gravity_scale

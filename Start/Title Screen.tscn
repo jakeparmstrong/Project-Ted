@@ -29,20 +29,20 @@
 size = 48
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 20
 extra_spacing_bottom = 128
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 14
 font_data = ExtResource( 7 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 16 ) ],
 "loop": true,
@@ -50,7 +50,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 7 )
 
 [node name="Title Screen" type="Control"]
@@ -93,7 +93,7 @@ __meta__ = {
 }
 
 [node name="TitleHeader" type="Label" parent="Menu"]
-margin_right = 1040.0
+margin_right = 1024.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 0, 256 )
 custom_fonts/font = SubResource( 1 )
@@ -105,7 +105,7 @@ valign = 1
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 pause_mode = 2
 margin_top = 260.0
-margin_right = 1040.0
+margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_vertical = 3
 alignment = 1
@@ -114,11 +114,11 @@ __meta__ = {
 }
 
 [node name="PushStart" type="Label" parent="Menu/CenterRow"]
-margin_left = 190.0
+margin_left = 182.0
 margin_top = 96.0
-margin_right = 850.0
+margin_right = 842.0
 margin_bottom = 244.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
 text = "Press Space (or Options) to Start"
 align = 1
@@ -136,15 +136,14 @@ __meta__ = {
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
 margin_right = 844.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Play Game"
 
 [node name="Controls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 64.0
 margin_right = 844.0
 margin_bottom = 124.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
 text = "Keyboard Controls"
 
@@ -160,7 +159,7 @@ visible = false
 margin_top = 192.0
 margin_right = 1024.0
 margin_bottom = 252.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
 text = "Options"
 flat = false
@@ -170,7 +169,7 @@ margin_left = 1.94806
 margin_top = 500.0
 margin_right = 1025.95
 margin_bottom = 600.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
 text = "Art and Animation: Jamie Dean
 Gameplay and Music: Jacob Armstrong"
@@ -187,8 +186,8 @@ script = ExtResource( 12 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 499.312, 211.708 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 4 )
-frame = 4
+frames = SubResource( 5 )
+frame = 5
 playing = true
 
 [node name="ControlsWindow" type="ColorRect" parent="."]
@@ -231,7 +230,7 @@ margin_left = -264.0
 margin_top = -65.0
 margin_right = 264.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
 text = "Keyboard Controls
 
@@ -286,7 +285,7 @@ margin_left = -248.0
 margin_top = -65.0
 margin_right = 248.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
 text = "Gamepad Controls
 
