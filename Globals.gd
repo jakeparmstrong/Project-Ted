@@ -8,6 +8,9 @@ func reset_life_count():
 
 func lose_life():
 	life_count -= 1
+	
+func add_life():
+	life_count += 1
 
 func get_life_count():
 	return life_count

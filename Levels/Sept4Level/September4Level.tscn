@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Audio/SecretLevel.wav" type="AudioStream" id=1]
 [ext_resource path="res://Levels/Sept4Level/EarthyTileSet.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Audio/whltnup.wav" type="AudioStream" id=11]
 [ext_resource path="res://Audio/YouWinSound.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Levels/Level2/PitSensor.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Items/Ball/Ball.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/Sept4Level/MovingPlatformGrass.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Levels/Sept4Level/MovingPlatformEarth.tscn" type="PackedScene" id=16]
 
@@ -154,6 +155,9 @@ scale = Vector2( 3.73, 1 )
 position = Vector2( 3584, 936 )
 scale = Vector2( 63.4847, 1 )
 
+[node name="Ball" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3232, 64 )
+
 [node name="Ted" parent="." instance=ExtResource( 3 )]
 position = Vector2( 160, -184 )
 scale = Vector2( 0.75, 0.75 )
@@ -223,6 +227,7 @@ speed = 2.0
 [connection signal="pit_entered" from="PitSensor2" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pit_entered" from="PitSensor3" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pit_entered" from="PitSensor4" to="." method="_on_PitSensor_pit_entered"]
+[connection signal="ball_collected" from="Ball" to="." method="_on_Ball_ball_collected"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]

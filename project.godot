@@ -97,7 +97,11 @@ pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
+2d_physics/layer_1="Map"
 2d_physics/layer_2="platform"
+2d_physics/layer_3="player"
+2d_physics/layer_4="vacgoon"
+2d_physics/layer_5="bone"
 
 [rendering]
 

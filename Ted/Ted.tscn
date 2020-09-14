@@ -85,7 +85,7 @@
 [ext_resource path="res://Ted/TedJump/TED JUMP JUNE 1/TED_JUMP_05.png" type="Texture" id=86]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 0.548783
+radius = 0.347826
 height = 72.6155
 
 [sub_resource type="SpriteFrames" id=2]
@@ -174,7 +174,8 @@ animations = [ {
 [node name="Ted" type="KinematicBody2D" groups=[
 "player",
 ]]
-collision_mask = 3
+collision_layer = 4
+collision_mask = 27
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -189,7 +190,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, -1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
-animation = "ted_turns"
+animation = "ted_stands"
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

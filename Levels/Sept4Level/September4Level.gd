@@ -45,6 +45,11 @@ func _on_Bone_bone_collected() -> void:
 		var time_remaining = ClockLabel.get_clock_time()
 		game_over(bone_score, time_remaining, gameover_reason.stage_clear)
 
+func _on_Ball_ball_collected() -> void:
+	BoneCollectedSound.play()
+	Globals.add_life()
+	LifeCountLabel.set_num_lives(Globals.get_life_count())
+
 func _on_Ted_pause_game() -> void:
 	get_tree().paused = true
 	LevelMusic.volume_db = -15
