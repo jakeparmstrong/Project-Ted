@@ -187,6 +187,7 @@ script = ExtResource( 12 )
 position = Vector2( 499.312, 211.708 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 5 )
+frame = 8
 playing = true
 
 [node name="ControlsWindow" type="ColorRect" parent="."]

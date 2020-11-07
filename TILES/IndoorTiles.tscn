@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://TILES/tile__FILL RIGHT.png" type="Texture" id=1]
+[ext_resource path="res://TILES/tile__WALL LEFT.png" type="Texture" id=2]
+[ext_resource path="res://TILES/tile__FLOAT LEFT.png" type="Texture" id=3]
+[ext_resource path="res://TILES/tile__FILL INTERIOR.png" type="Texture" id=4]
+[ext_resource path="res://TILES/tile__FLOAT MID.png" type="Texture" id=5]
+[ext_resource path="res://TILES/tile__FILL MID.png" type="Texture" id=6]
+[ext_resource path="res://TILES/tile__FILL LEFT.png" type="Texture" id=7]
+[ext_resource path="res://TILES/tile__FLOAT RIGHT.png" type="Texture" id=8]
+[ext_resource path="res://TILES/tile__WALL RIGHT.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 8 )
+
+[node name="Node" type="Node"]
+
+[node name="IndoorFillLeft" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorFillLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorFillLeft/StaticBody2D"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="IndoorFillMid" type="Sprite" parent="."]
+position = Vector2( 160, 32 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorFillMid"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorFillMid/StaticBody2D"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="IndoorFillRight" type="Sprite" parent="."]
+position = Vector2( 288, 32 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorFillRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorFillRight/StaticBody2D"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="IndoorWallLeft" type="Sprite" parent="."]
+position = Vector2( 32, 160 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorWallLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorWallLeft/StaticBody2D"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="IndoorFillInterior" type="Sprite" parent="."]
+position = Vector2( 160, 160 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorFillInterior"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorFillInterior/StaticBody2D"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="IndoorWallRight" type="Sprite" parent="."]
+position = Vector2( 288, 160 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorWallRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorWallRight/StaticBody2D"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="IndoorFloatLeft" type="Sprite" parent="."]
+position = Vector2( 32, 288 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorFloatLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorFloatLeft/StaticBody2D"]
+visible = false
+position = Vector2( 0, -24 )
+shape = SubResource( 2 )
+
+[node name="IndoorFloatMid" type="Sprite" parent="."]
+position = Vector2( 160, 288 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorFloatMid"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorFloatMid/StaticBody2D"]
+visible = false
+position = Vector2( 0, -24 )
+shape = SubResource( 2 )
+
+[node name="IndoorFloatRight" type="Sprite" parent="."]
+position = Vector2( 288, 288 )
+texture = ExtResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IndoorFloatRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IndoorFloatRight/StaticBody2D"]
+visible = false
+position = Vector2( 0, -24 )
+shape = SubResource( 2 )
