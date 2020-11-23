@@ -11,5 +11,3 @@ Play ~the most recent~ an older version on [itch.io](https://jarms.itch.io/proje
 
 
 See [Wiki](https://github.com/jakeparmstrong/Project-Ted/wiki) for controls.
-
-ADDITIONAL TEXT.
