@@ -12,3 +12,7 @@ func _on_PauseScreen_unpause_internal() -> void:
 
 func _on_Clock_time_out_interface() -> void:
 	emit_signal("time_out_external")
+
+
+func _on_Interface_unpause_external() -> void:
+	pass # Replace with function body.

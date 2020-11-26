@@ -90,49 +90,9 @@ height = 72.6155
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "ted_walks_old",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 48 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ) ],
-"loop": true,
-"name": "ted_walks_june22",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 81 ) ],
-"loop": false,
-"name": "ted_jump_windup",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "ted_jump_up_old",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 27 ), ExtResource( 20 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "ted_jump_windup_old",
-"speed": 24.0
-}, {
-"frames": [  ],
-"loop": false,
-"name": "ted_lands",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 38 ), ExtResource( 31 ), ExtResource( 45 ) ],
-"loop": false,
-"name": "ted_jump_windup_j22",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 82 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 86 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 84 ) ],
-"loop": false,
-"name": "ted_jump_up",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 28 ) ],
-"loop": false,
-"name": "ted_falling_old",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -140,9 +100,49 @@ animations = [ {
 "name": "ted_stands_old",
 "speed": 1.0
 }, {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 48 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "ted_walks_june22",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 31 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "ted_jump_windup_j22",
+"speed": 24.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "ted_lands",
+"speed": 24.0
+}, {
 "frames": [ ExtResource( 46 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 34 ) ],
 "loop": false,
 "name": "ted_falling_j22",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 82 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 86 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 84 ) ],
+"loop": false,
+"name": "ted_jump_up",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 85 ), ExtResource( 77 ), ExtResource( 78 ) ],
+"loop": false,
+"name": "ted_falling",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
+"loop": false,
+"name": "ted_turns",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "ted_falling_old",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": false,
+"name": "ted_jump_up_j22",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 74 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 69 ), ExtResource( 72 ), ExtResource( 73 ) ],
@@ -150,9 +150,14 @@ animations = [ {
 "name": "ted_walks",
 "speed": 36.0
 }, {
-"frames": [ ExtResource( 75 ), ExtResource( 85 ), ExtResource( 77 ), ExtResource( 78 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
 "loop": false,
-"name": "ted_falling",
+"name": "ted_jump_up_old",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": false,
+"name": "ted_jump_windup",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 69 ) ],
@@ -160,14 +165,9 @@ animations = [ {
 "name": "ted_stands",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": false,
-"name": "ted_jump_up_j22",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
-"loop": false,
-"name": "ted_turns",
+"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "ted_walks_old",
 "speed": 24.0
 } ]
 
