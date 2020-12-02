@@ -17,6 +17,7 @@ onready var FinalScore = get_node("CanvasLayer/Interface/FinalScore")
 onready var FinalScoreLabel = get_node("CanvasLayer/Interface/FinalScore/FinalScoreLabel")
 onready var PauseScreen = get_node("CanvasLayer/Interface/PauseScreen")
 onready var BoneCollectedSound = get_node("BoneCollected")
+onready var BallCollectedSound = get_node("BallCollected")
 onready var YouWinSound = get_node("YouWinSound")
 onready var YouLoseSound = get_node("YouLoseSound")
 onready var UnpauseSound = get_node("UnpauseGame")
@@ -46,7 +47,7 @@ func _on_Bone_bone_collected() -> void:
 		game_over(bone_score, time_remaining, gameover_reason.stage_clear)
 
 func _on_Ball_ball_collected() -> void:
-	BoneCollectedSound.play()
+	BallCollectedSound.play()
 	Globals.add_life()
 	LifeCountLabel.set_num_lives(Globals.get_life_count())
 
