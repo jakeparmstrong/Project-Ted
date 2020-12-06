@@ -109,7 +109,7 @@ func win_handler(bone, time, _reason):
 	print("played")
 	yield(YouWinSound, "finished")
 	print("Won")
-	SceneChanger.change_scene("res://Start/Title Screen.tscn")
+	SceneChanger.change_scene("res://Levels/JD - TEST LEVEL/JD_TestLevel.tscn")
 
 func _on_PitSensor_pit_entered() -> void:
 	var time_remaining = ClockLabel.get_clock_time()
