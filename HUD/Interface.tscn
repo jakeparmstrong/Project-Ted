@@ -180,5 +180,6 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="unpause_external" from="." to="." method="_on_Interface_unpause_external"]
 [connection signal="unpause_internal" from="PauseScreen" to="." method="_on_PauseScreen_unpause_internal"]
 [connection signal="time_out_interface" from="Clock" to="." method="_on_Clock_time_out_interface"]

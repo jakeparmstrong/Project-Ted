@@ -158,6 +158,34 @@ scale = Vector2( 63.4847, 1 )
 [node name="Ball" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3232, 64 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Interface" parent="CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="GrassyPlatform" parent="." instance=ExtResource( 15 )]
+position = Vector2( 3680, 720 )
+move_to = Vector2( 0, -512 )
+
+[node name="EarthyPlatform" parent="." instance=ExtResource( 16 )]
+position = Vector2( 352, 128 )
+move_to = Vector2( 0, 192 )
+
+[node name="EarthyPlatform3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 3952, 544 )
+move_to = Vector2( 0, 192 )
+speed = 4.0
+
+[node name="EarthyPlatform4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4136, 744 )
+move_to = Vector2( 0, -128 )
+
+[node name="EarthyPlatform5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4416, 768 )
+move_to = Vector2( 0, -128 )
+
+[node name="EarthyPlatform2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 3176, 728 )
+
 [node name="Ted" parent="." instance=ExtResource( 3 )]
 position = Vector2( 160, -184 )
 scale = Vector2( 0.75, 0.75 )
@@ -169,35 +197,7 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.39
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Interface" parent="CanvasLayer" instance=ExtResource( 4 )]
-
-[node name="GrassyPlatform" parent="." instance=ExtResource( 15 )]
-position = Vector2( 3680, 720 )
-move_to = Vector2( 0, -512 )
-
-[node name="EarthyPlatform" parent="." instance=ExtResource( 16 )]
-position = Vector2( 2720, 536 )
-move_to = Vector2( 0, 192 )
-
-[node name="EarthyPlatform3" parent="." instance=ExtResource( 16 )]
-position = Vector2( 3952, 544 )
-move_to = Vector2( 0, 192 )
-speed = 4.0
-
-[node name="EarthyPlatform4" parent="." instance=ExtResource( 16 )]
-position = Vector2( 4136, 744 )
-move_to = Vector2( 0, -128 )
-speed = 2.0
-
-[node name="EarthyPlatform5" parent="." instance=ExtResource( 16 )]
-position = Vector2( 4416, 768 )
-move_to = Vector2( 0, -128 )
-
-[node name="EarthyPlatform2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 3176, 728 )
-speed = 2.0
+[node name="BallCollected" type="AudioStreamPlayer" parent="."]
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
@@ -228,6 +228,6 @@ speed = 2.0
 [connection signal="pit_entered" from="PitSensor3" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pit_entered" from="PitSensor4" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="ball_collected" from="Ball" to="." method="_on_Ball_ball_collected"]
-[connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
+[connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
