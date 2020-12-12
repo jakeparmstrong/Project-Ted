@@ -9,6 +9,7 @@ var walk_accel = 1000
 var gravity_scale = 500
 var original_position
 var walk_range
+var within_earshot = false
 
 func _ready() -> void:
 	moving_right = true
@@ -47,9 +48,27 @@ func _on_Area2D_body_entered(body: Node) -> void:
 	if body.name == "Ted":
 		emit_signal("player_touched")
 
-#THIS CODE IS FOR SQUIRREL
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	print(area.name)
 	if area.name == "BarkArea":
-		queue_free() #Make function with death anim
-		print("BARK AREA ENTERED") 
+		within_earshot = true
+		#print("BARK AREA ENTERED") 
+
+func die():
+	queue_free() #Make function with death anim
+	#TODO: Add death animation, death sound?
+	
+
+func _on_Ted_ted_barks() -> void:
+	if within_earshot == true:
+		within_earshot = false
+		die()
+	else:
+		pass
+		#print("squirrel don't care")
+
+func _on_Area2D_area_exited(area: Area2D) -> void:
+	#print(area.name)
+	if area.name == "BarkArea":
+		within_earshot = false
+		#print("BARK AREA Exited") 

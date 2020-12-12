@@ -185,7 +185,7 @@ position = Vector2( 0, -1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
 animation = "ted_stands"
-frame = 3
+frame = 4
 playing = true
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
@@ -202,7 +202,6 @@ stream = ExtResource( 29 )
 pitch_scale = 1.25
 
 [node name="BarkArea" type="Area2D" parent="."]
-monitorable = false
 collision_layer = 8
 
 [node name="BarkRadius" type="CollisionShape2D" parent="BarkArea"]

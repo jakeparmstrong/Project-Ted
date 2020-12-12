@@ -97,9 +97,9 @@ func bark():
 	# - squirrel checks proximity to ted on signal, disappears if close enough?
 	if not_thirsty:
 		BarkSound.play()
-		BarkingArea.monitorable = true
 		state = state_list.barking
 		$AnimatedSprite.play("ted_barks")
+		emit_signal("ted_barks")
 	else:
 		$AnimatedSprite.play("ted_weak_bark")
 
@@ -162,6 +162,7 @@ func get_input(delta):
 		$AnimatedSprite.set_flip_h(false)
 
 func _physics_process(delta: float) -> void:
+	#print(BarkingArea.monitorable)
 	velocity.y = gravity_scale
 	get_input(delta)
 # warning-ignore:return_value_discarded
@@ -200,6 +201,5 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		state = state_list.falling
 		$AnimatedSprite.play("ted_falling")
 	if state == state_list.barking:
-		BarkingArea.monitorable = false
 		state = state_list.idle
 		$AnimatedSprite.play("ted_stands")

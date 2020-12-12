@@ -157,6 +157,12 @@ position = Vector2( 4128, 160 )
 [node name="Squirrel" parent="." instance=ExtResource( 14 )]
 position = Vector2( 728, 360 )
 
+[node name="Squirrel2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1392, 336 )
+
+[node name="Squirrel3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1144, 296 )
+
 [node name="BallCollected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
@@ -185,8 +191,12 @@ stream = ExtResource( 13 )
 [connection signal="pit_entered" from="PitSensor3" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
-[connection signal="ted_barks" from="Ted" to="VacGoon" method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel3" method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel" method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel2" method="_on_Ted_ted_barks"]
 [connection signal="player_touched" from="VacGoon" to="." method="_on_VacGoon_player_touched"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
 [connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]
+[connection signal="player_touched" from="Squirrel2" to="." method="_on_Squirrel_player_touched"]
+[connection signal="player_touched" from="Squirrel3" to="." method="_on_Squirrel_player_touched"]
