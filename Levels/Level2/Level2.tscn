@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Levels/Level2/TileMap1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ted/Ted.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Audio/boneget.wav" type="AudioStream" id=11]
 [ext_resource path="res://Levels/Kitchen/KitchenPlatform.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Audio/tedLife.wav" type="AudioStream" id=13]
+[ext_resource path="res://baddies/Squirrel/Squirrel.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Audio/whltnup.wav" type="AudioStream" id=26]
 [ext_resource path="res://Audio/tedLevelSong.wav" type="AudioStream" id=27]
 
@@ -153,6 +154,9 @@ position = Vector2( 4128, 160 )
 
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 5 )]
 
+[node name="Squirrel" parent="." instance=ExtResource( 14 )]
+position = Vector2( 728, 360 )
+
 [node name="BallCollected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
@@ -179,8 +183,10 @@ stream = ExtResource( 13 )
 [connection signal="pit_entered" from="PitSensor" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pit_entered" from="PitSensor2" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pit_entered" from="PitSensor3" to="." method="_on_PitSensor_pit_entered"]
-[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
+[connection signal="ted_barks" from="Ted" to="VacGoon" method="_on_Ted_ted_barks"]
 [connection signal="player_touched" from="VacGoon" to="." method="_on_VacGoon_player_touched"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
+[connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]

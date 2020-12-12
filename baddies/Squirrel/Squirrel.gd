@@ -14,7 +14,8 @@ func _ready() -> void:
 	moving_right = true
 	original_position = get_position()
 	walk_range = 192
-
+	
+#TODO: Make jump and move pattern for squirrel
 func move_baddie(delta):
 	if moving_right:
 		if get_position().x > original_position.x + walk_range:
@@ -41,6 +42,14 @@ func _physics_process(delta: float) -> void:
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2(0, -1))
 
+
 func _on_Area2D_body_entered(body: Node) -> void:
 	if body.name == "Ted":
 		emit_signal("player_touched")
+
+#THIS CODE IS FOR SQUIRREL
+func _on_Area2D_area_entered(area: Area2D) -> void:
+	print(area.name)
+	if area.name == "BarkArea":
+		queue_free() #Make function with death anim
+		print("BARK AREA ENTERED") 

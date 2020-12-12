@@ -114,3 +114,8 @@ func _on_VacGoon_player_touched() -> void:
 	game_over(bone_score, time_remaining, gameover_reason.death)
 
 
+
+
+func _on_Squirrel_player_touched() -> void:
+	var time_remaining = ClockLabel.get_clock_time()
+	game_over(bone_score, time_remaining, gameover_reason.death)
