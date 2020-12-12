@@ -49,10 +49,8 @@ func _on_Area2D_body_entered(body: Node) -> void:
 		emit_signal("player_touched")
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
-	print(area.name)
 	if area.name == "BarkArea":
 		within_earshot = true
-		#print("BARK AREA ENTERED") 
 
 func die():
 	queue_free() #Make function with death anim
@@ -61,7 +59,6 @@ func die():
 
 func _on_Ted_ted_barks() -> void:
 	if within_earshot == true:
-		within_earshot = false
 		die()
 	else:
 		pass

@@ -41,6 +41,7 @@ func _on_Bone_bone_collected() -> void:
 	# make setter
 	BoneCountLabel.text = ' '+str(bone_score)+"/"+str(NUM_BONES)
 	BoneCollectedSound.play()
+	yield(BoneCollectedSound, "finished")
 	if bone_score == NUM_BONES:
 		var time_remaining = ClockLabel.get_clock_time()
 		game_over(bone_score, time_remaining, gameover_reason.stage_clear)
@@ -103,7 +104,7 @@ func win_handler(bone, time, _reason):
 	YouWinSound.play()
 	yield(YouWinSound, "finished")
 	SceneChanger.change_scene("res://Levels/Sept4Level/September4Level.tscn")
-
+	
 func _on_PitSensor_pit_entered() -> void:
 	var time_remaining = ClockLabel.get_clock_time()
 	game_over(bone_score, time_remaining, gameover_reason.death)

@@ -91,6 +91,56 @@ height = 72.6155
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 96 ), ExtResource( 97 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 98 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "ted_barks",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 74 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 69 ), ExtResource( 72 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "ted_walks",
+"speed": 36.0
+}, {
+"frames": [ ExtResource( 82 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 86 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 84 ) ],
+"loop": false,
+"name": "ted_jump_up",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "ted_walks_old",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": false,
+"name": "ted_jump_windup",
+"speed": 24.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "ted_lands",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 90 ), ExtResource( 91 ), ExtResource( 30 ), ExtResource( 94 ), ExtResource( 92 ), ExtResource( 42 ), ExtResource( 87 ), ExtResource( 93 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 95 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "ted_stands",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 20 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "ted_jump_windup_old",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
+"loop": false,
+"name": "ted_turns",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 55 ), ExtResource( 49 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "ted_runs",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 23 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "ted_jump_up_old",
@@ -101,59 +151,9 @@ animations = [ {
 "name": "ted_falling_old",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "ted_walks_old",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 82 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 86 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 84 ) ],
-"loop": false,
-"name": "ted_jump_up",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 20 ), ExtResource( 18 ) ],
-"loop": false,
-"name": "ted_jump_windup_old",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 75 ), ExtResource( 85 ), ExtResource( 77 ), ExtResource( 78 ) ],
 "loop": false,
 "name": "ted_falling",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ) ],
-"loop": false,
-"name": "ted_turns",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 74 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 69 ), ExtResource( 72 ), ExtResource( 73 ) ],
-"loop": true,
-"name": "ted_walks",
-"speed": 36.0
-}, {
-"frames": [ ExtResource( 40 ), ExtResource( 55 ), ExtResource( 49 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "ted_runs",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": false,
-"name": "ted_lands",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 81 ) ],
-"loop": false,
-"name": "ted_jump_windup",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 90 ), ExtResource( 91 ), ExtResource( 30 ), ExtResource( 94 ), ExtResource( 92 ), ExtResource( 42 ), ExtResource( 87 ), ExtResource( 93 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 95 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "ted_stands",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 96 ), ExtResource( 97 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 98 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 47 ) ],
-"loop": true,
-"name": "ted_barks",
 "speed": 24.0
 }, {
 "frames": [  ],
@@ -185,7 +185,7 @@ position = Vector2( 0, -1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
 animation = "ted_stands"
-frame = 4
+frame = 7
 playing = true
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]

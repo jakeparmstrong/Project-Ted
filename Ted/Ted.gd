@@ -16,7 +16,7 @@ var allow_jump = true
 var max_jump_length_s = 1.5
 var has_landed = true
 var state
-var not_thirsty = true #later: set to false until drinking from bowl
+var is_thirsty = false #later: set to false until drinking from bowl
 
 onready var CollidingShape = get_node("CollisionShape2D")
 onready var JumpSound = get_node("JumpSound")
@@ -92,10 +92,7 @@ func ready_to_attack():
 		return false
 
 func bark():
-	# all the stuff needed for bark to work, maybe this:
-	# - emit signal
-	# - squirrel checks proximity to ted on signal, disappears if close enough?
-	if not_thirsty:
+	if !is_thirsty:
 		BarkSound.play()
 		state = state_list.barking
 		$AnimatedSprite.play("ted_barks")
@@ -109,7 +106,6 @@ func get_input(delta):
 	if should_run() == true:
 		state = state_list.running
 		top_speed = run_speed
-		#dumb move to show for now
 		$AnimatedSprite.play("ted_runs")
 	elif done_run():
 		walk()
@@ -154,7 +150,7 @@ func get_input(delta):
 		allow_jump = false
 	if !is_on_floor() and !Input.is_action_pressed("player_jump"):
 		allow_jump = false
-	if Input.is_action_pressed("player_attack") and ready_to_attack():
+	if Input.is_action_just_pressed("player_attack") and ready_to_attack():
 		bark()
 	if not moving_right:
 		$AnimatedSprite.set_flip_h(true)
@@ -162,7 +158,6 @@ func get_input(delta):
 		$AnimatedSprite.set_flip_h(false)
 
 func _physics_process(delta: float) -> void:
-	#print(BarkingArea.monitorable)
 	velocity.y = gravity_scale
 	get_input(delta)
 # warning-ignore:return_value_discarded
@@ -185,7 +180,6 @@ func just_landed():
 	return retVal
 
 func _on_AnimatedSprite_animation_finished() -> void:
-	#this might be better practice if you just check which animation it is
 	if state == state_list.turning:
 		state = state_list.idle
 		$AnimatedSprite.play("ted_stands")
