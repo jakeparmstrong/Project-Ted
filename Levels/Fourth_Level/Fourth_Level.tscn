@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Audio/YouLoseSound.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ted/Ted.tscn" type="PackedScene" id=2]
@@ -9,19 +9,58 @@
 [ext_resource path="res://Audio/tedLife.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/whltnup.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/boneget.wav" type="AudioStream" id=9]
+[ext_resource path="res://Levels/Sept4Level/EarthyTileSet.tres" type="TileSet" id=10]
+[ext_resource path="res://Audio/chillLevel.wav" type="AudioStream" id=11]
+[ext_resource path="res://Levels/Fourth_Level/Fourth_Level.gd" type="Script" id=12]
+[ext_resource path="res://Levels/Sept4Level/MovingPlatformGrass.tscn" type="PackedScene" id=13]
 
 [node name="Fourth_Level" type="Node2D"]
-
-[node name="Ted" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 12 )
 
 [node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
 format = 1
+tile_data = PoolIntArray( -393196, 15, 0, -393177, 15, 0, -393176, 9, 0, -393175, 9, 0, -327660, 7, 0, -327641, 7, 0, -327640, 3, 0, -327639, 3, 0, -327638, 3, 0, -262102, 3, 0, -196566, 3, 0, -131033, 15, 0, -131032, 9, 0, -131031, 9, 0, -131030, 10, 0, -65497, 7, 0, -65496, 3, 0, -65495, 3, 0, -65494, 3, 0, 39, 7, 0, 40, 3, 0, 41, 3, 0, 42, 3, 0, 65575, 7, 0, 65576, 3, 0, 65577, 3, 0, 65578, 3, 0, 131111, 7, 0, 131112, 3, 0, 131113, 3, 0, 131114, 3, 0, 196647, 7, 0, 196648, 3, 0, 196649, 3, 0, 196650, 3, 0, 262147, 6, 0, 262148, 0, 0, 262149, 4, 0, 262152, 6, 0, 262153, 0, 0, 262154, 4, 0, 262183, 7, 0, 262184, 3, 0, 262185, 3, 0, 262186, 3, 0, 327683, 7, 0, 327684, 2, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 1, 0, 327690, 5, 0, 327719, 7, 0, 327720, 3, 0, 327721, 3, 0, 327722, 3, 0, 393219, 7, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 5, 0, 393255, 7, 0, 393256, 3, 0, 393257, 3, 0, 393258, 3, 0, 458755, 7, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 5, 0, 458791, 7, 0, 458792, 3, 0, 458793, 3, 0, 458794, 3, 0, 524291, 7, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 5, 0, 524330, 3, 0, 589827, 7, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 11, 0, 589834, 9, 0, 589835, 13, 0, 589866, 3, 0, 655363, 7, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 5, 0, 655399, 15, 0, 655400, 9, 0, 655401, 9, 0, 655402, 10, 0, 720899, 7, 0, 720900, 3, 0, 720901, 3, 0, 720902, 3, 0, 720903, 3, 0, 720904, 3, 0, 720905, 3, 0, 720906, 3, 0, 720907, 5, 0, 720935, 7, 0, 720936, 3, 0, 720937, 3, 0, 720938, 3, 0, 786435, 7, 0, 786436, 3, 0, 786437, 3, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 5, 0, 786471, 7, 0, 786472, 3, 0, 786473, 3, 0, 786474, 3, 0, 851971, 7, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 5, 0, 852007, 7, 0, 852008, 3, 0, 852009, 3, 0, 852010, 3, 0, 917507, 7, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917543, 7, 0, 917544, 3, 0, 917545, 3, 0, 917546, 3, 0, 983043, 7, 0, 983044, 3, 0, 983045, 3, 0, 983046, 3, 0, 983047, 3, 0, 983048, 3, 0, 983049, 3, 0, 983050, 3, 0, 1048579, 7, 0, 1048580, 3, 0, 1048581, 3, 0, 1048582, 3, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 3, 0, 1048586, 3, 0, 1114115, 7, 0, 1114116, 3, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 3, 0, 1114120, 3, 0, 1114121, 3, 0, 1114122, 3, 0, 1114123, 5, 0, 1179651, 7, 0, 1179652, 3, 0, 1179653, 3, 0, 1179654, 3, 0, 1179655, 3, 0, 1179656, 3, 0, 1179657, 3, 0, 1179658, 3, 0, 1179659, 5, 0, 1245187, 7, 0, 1245188, 3, 0, 1245189, 3, 0, 1245190, 3, 0, 1245191, 3, 0, 1245192, 3, 0, 1245193, 3, 0, 1245194, 3, 0, 1245195, 5, 0, 1310723, 7, 0, 1310724, 3, 0, 1310725, 3, 0, 1310726, 3, 0, 1310727, 3, 0, 1310728, 3, 0, 1310729, 3, 0, 1310730, 3, 0, 1310731, 5, 0 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.458824, 0.627451, 0.682353, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Bone" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128, 640 )
+
+[node name="Bone2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 608, 216 )
+
+[node name="Bone3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 672, 544 )
+
+[node name="Bone4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1216, 480 )
+
+[node name="Bone5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1984, 608 )
+
+[node name="Bone6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2624, 592 )
+
+[node name="Bone7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2368, 336 )
+
+[node name="Bone8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2368, 56 )
+
+[node name="Bone9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2624, -176 )
 
 [node name="Ball" parent="." instance=ExtResource( 4 )]
+position = Vector2( 416, -520 )
 
 [node name="YouLoseSound" parent="." instance=ExtResource( 1 )]
 
@@ -38,6 +77,60 @@ stream = ExtResource( 7 )
 stream = ExtResource( 9 )
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -5.0
 
 [node name="UnpauseGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="GrassyPlatform" parent="." instance=ExtResource( 13 )]
+position = Vector2( 896, 224 )
+move_to = Vector2( 0, 320 )
+speed = 1.8
+
+[node name="GrassyPlatform2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1216, 288 )
+move_to = Vector2( 0, 320 )
+
+[node name="GrassyPlatform3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1536, 352 )
+move_to = Vector2( 0, 320 )
+speed = 1.88
+
+[node name="GrassyPlatform4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1984, 416 )
+move_to = Vector2( 0, 320 )
+speed = 2.1
+
+[node name="GrassyPlatform5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 128, 688 )
+move_to = Vector2( 0, -320 )
+
+[node name="GrassyPlatform6" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2368, 760 )
+move_to = Vector2( 0, -1280 )
+speed = 3.0
+
+[node name="Ted" parent="." instance=ExtResource( 2 )]
+position = Vector2( 467.356, 51.9285 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Camera2D" type="Camera2D" parent="Ted"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.39
+[connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone4" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone5" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone6" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone7" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone8" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone9" to="." method="_on_Bone_bone_collected"]
+[connection signal="ball_collected" from="Ball" to="." method="_on_Ball_ball_collected"]
+[connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
+[connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
+[connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="ted_barks" from="Ted" to="." method="_on_Ted_ted_barks"]
