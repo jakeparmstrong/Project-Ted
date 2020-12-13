@@ -4,7 +4,7 @@
 [ext_resource path="res://TILES/GrassyTileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://Items/Bone/Bone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Sept4Level/NightSky.png" type="Texture" id=4]
-[ext_resource path="res://Audio/ForestLevel.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/chillLevel.wav" type="AudioStream" id=5]
 [ext_resource path="res://Levels/Sept4Level/MovingPlatformGrass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://HUD/Interface.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Items/Ball/Ball.tscn" type="PackedScene" id=8]
@@ -38,7 +38,7 @@ tile_data = PoolIntArray( -131089, 4, 0, -131088, 4, 0, -131087, 4, 0, -131086, 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 5 )
-volume_db = -5.145
+volume_db = -5.0
 
 [node name="YouWinSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

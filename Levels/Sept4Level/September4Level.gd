@@ -42,6 +42,7 @@ func _on_Bone_bone_collected() -> void:
 	# make setter
 	BoneCountLabel.text = ' '+str(bone_score)+"/"+str(NUM_BONES)
 	BoneCollectedSound.play()
+	yield(BoneCollectedSound, "finished")
 	if bone_score == NUM_BONES:
 		var time_remaining = ClockLabel.get_clock_time()
 		game_over(bone_score, time_remaining, gameover_reason.stage_clear)

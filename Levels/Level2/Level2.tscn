@@ -116,6 +116,9 @@ position = Vector2( 5664, 312 )
 pause_mode = 2
 stream = ExtResource( 27 )
 
+[node name="BallCollected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
 [node name="UnpauseGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )
 
@@ -162,9 +165,6 @@ position = Vector2( 1392, 336 )
 
 [node name="Squirrel3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1144, 296 )
-
-[node name="BallCollected" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
