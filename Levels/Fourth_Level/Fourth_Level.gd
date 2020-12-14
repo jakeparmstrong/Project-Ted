@@ -6,8 +6,8 @@ var bone_sound_index = 0
 var stop_animation = false
 var reason
 
-const NUM_BONES = 20
-const TIME_LIMIT = 90
+const NUM_BONES = 16
+const TIME_LIMIT = 225
 
 onready var BoneCountLabel = get_node("CanvasLayer/Interface/BoneCounter/Node/Label")
 onready var LifeCountLabel = get_node("CanvasLayer/Interface/LifeCounter/Label")
@@ -91,7 +91,7 @@ func loss_handler(bone, time, reason):
 	if Globals.get_life_count() < 0:
 		SceneChanger.change_scene("res://GameOver/GameOver.tscn")
 	else:
-		SceneChanger.change_scene("res://Levels/First_Level/First_Level.tscn")
+		SceneChanger.change_scene("res://Levels/Fourth_Level/Fourth_Level.tscn")
 
 func win_handler(bone, time, _reason):
 	var end_text

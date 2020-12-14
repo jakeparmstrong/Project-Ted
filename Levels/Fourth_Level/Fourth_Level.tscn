@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Audio/YouLoseSound.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ted/Ted.tscn" type="PackedScene" id=2]
@@ -10,9 +10,12 @@
 [ext_resource path="res://Audio/whltnup.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/boneget.wav" type="AudioStream" id=9]
 [ext_resource path="res://Levels/Sept4Level/EarthyTileSet.tres" type="TileSet" id=10]
-[ext_resource path="res://Audio/chillLevel.wav" type="AudioStream" id=11]
+[ext_resource path="res://Audio/chillLevel-sundaymix.wav" type="AudioStream" id=11]
 [ext_resource path="res://Levels/Fourth_Level/Fourth_Level.gd" type="Script" id=12]
 [ext_resource path="res://Levels/Sept4Level/MovingPlatformGrass.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/Sept4Level/MovingPlatformEarth.tscn" type="PackedScene" id=14]
+[ext_resource path="res://baddies/Squirrel/Squirrel.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Levels/Level2/PitSensor.tscn" type="PackedScene" id=16]
 
 [node name="Fourth_Level" type="Node2D"]
 script = ExtResource( 12 )
@@ -20,7 +23,7 @@ script = ExtResource( 12 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 10 )
 format = 1
-tile_data = PoolIntArray( -393196, 15, 0, -393177, 15, 0, -393176, 9, 0, -393175, 9, 0, -327660, 7, 0, -327641, 7, 0, -327640, 3, 0, -327639, 3, 0, -327638, 3, 0, -262102, 3, 0, -196566, 3, 0, -131033, 15, 0, -131032, 9, 0, -131031, 9, 0, -131030, 10, 0, -65497, 7, 0, -65496, 3, 0, -65495, 3, 0, -65494, 3, 0, 39, 7, 0, 40, 3, 0, 41, 3, 0, 42, 3, 0, 65575, 7, 0, 65576, 3, 0, 65577, 3, 0, 65578, 3, 0, 131111, 7, 0, 131112, 3, 0, 131113, 3, 0, 131114, 3, 0, 196647, 7, 0, 196648, 3, 0, 196649, 3, 0, 196650, 3, 0, 262147, 6, 0, 262148, 0, 0, 262149, 4, 0, 262152, 6, 0, 262153, 0, 0, 262154, 4, 0, 262183, 7, 0, 262184, 3, 0, 262185, 3, 0, 262186, 3, 0, 327683, 7, 0, 327684, 2, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 1, 0, 327690, 5, 0, 327719, 7, 0, 327720, 3, 0, 327721, 3, 0, 327722, 3, 0, 393219, 7, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 5, 0, 393255, 7, 0, 393256, 3, 0, 393257, 3, 0, 393258, 3, 0, 458755, 7, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 5, 0, 458791, 7, 0, 458792, 3, 0, 458793, 3, 0, 458794, 3, 0, 524291, 7, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 5, 0, 524330, 3, 0, 589827, 7, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 11, 0, 589834, 9, 0, 589835, 13, 0, 589866, 3, 0, 655363, 7, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 5, 0, 655399, 15, 0, 655400, 9, 0, 655401, 9, 0, 655402, 10, 0, 720899, 7, 0, 720900, 3, 0, 720901, 3, 0, 720902, 3, 0, 720903, 3, 0, 720904, 3, 0, 720905, 3, 0, 720906, 3, 0, 720907, 5, 0, 720935, 7, 0, 720936, 3, 0, 720937, 3, 0, 720938, 3, 0, 786435, 7, 0, 786436, 3, 0, 786437, 3, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 5, 0, 786471, 7, 0, 786472, 3, 0, 786473, 3, 0, 786474, 3, 0, 851971, 7, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 5, 0, 852007, 7, 0, 852008, 3, 0, 852009, 3, 0, 852010, 3, 0, 917507, 7, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917543, 7, 0, 917544, 3, 0, 917545, 3, 0, 917546, 3, 0, 983043, 7, 0, 983044, 3, 0, 983045, 3, 0, 983046, 3, 0, 983047, 3, 0, 983048, 3, 0, 983049, 3, 0, 983050, 3, 0, 1048579, 7, 0, 1048580, 3, 0, 1048581, 3, 0, 1048582, 3, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 3, 0, 1048586, 3, 0, 1114115, 7, 0, 1114116, 3, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 3, 0, 1114120, 3, 0, 1114121, 3, 0, 1114122, 3, 0, 1114123, 5, 0, 1179651, 7, 0, 1179652, 3, 0, 1179653, 3, 0, 1179654, 3, 0, 1179655, 3, 0, 1179656, 3, 0, 1179657, 3, 0, 1179658, 3, 0, 1179659, 5, 0, 1245187, 7, 0, 1245188, 3, 0, 1245189, 3, 0, 1245190, 3, 0, 1245191, 3, 0, 1245192, 3, 0, 1245193, 3, 0, 1245194, 3, 0, 1245195, 5, 0, 1310723, 7, 0, 1310724, 3, 0, 1310725, 3, 0, 1310726, 3, 0, 1310727, 3, 0, 1310728, 3, 0, 1310729, 3, 0, 1310730, 3, 0, 1310731, 5, 0 )
+tile_data = PoolIntArray( -393196, 15, 0, -393177, 6, 0, -393176, 0, 0, -393175, 0, 0, -393174, 0, 0, -393173, 0, 0, -393172, 0, 0, -393171, 0, 0, -393170, 0, 0, -393169, 0, 0, -393168, 0, 0, -393167, 0, 0, -393166, 0, 0, -393165, 0, 0, -393164, 0, 0, -393163, 0, 0, -327660, 7, 0, -327641, 7, 0, -327640, 3, 0, -327639, 3, 0, -327638, 3, 0, -327637, 3, 0, -327636, 3, 0, -327635, 3, 0, -327634, 3, 0, -327633, 3, 0, -327632, 3, 0, -327631, 3, 0, -327630, 3, 0, -327629, 3, 0, -327628, 3, 0, -327627, 3, 0, -131033, 15, 0, -131032, 9, 0, -131031, 9, 0, -131030, 9, 0, -131029, 13, 0, -65497, 7, 0, -65496, 3, 0, -65495, 3, 0, -65494, 11, 0, -65493, 9, 0, -65492, 13, 0, 39, 7, 0, 40, 3, 0, 41, 3, 0, 42, 3, 0, 43, 11, 0, 44, 9, 0, 45, 9, 0, 46, 9, 0, 47, 13, 0, 65575, 7, 0, 65576, 3, 0, 65577, 3, 0, 65578, 3, 0, 65579, 3, 0, 65580, 3, 0, 65581, 3, 0, 65582, 3, 0, 65583, 5, 0, 131111, 7, 0, 131112, 3, 0, 131113, 3, 0, 131114, 3, 0, 196647, 7, 0, 196648, 3, 0, 196649, 3, 0, 196650, 3, 0, 196652, 15, 0, 196653, 9, 0, 196654, 9, 0, 196655, 13, 0, 262147, 6, 0, 262148, 0, 0, 262149, 4, 0, 262152, 6, 0, 262153, 0, 0, 262154, 4, 0, 262183, 7, 0, 262184, 3, 0, 262185, 3, 0, 262186, 3, 0, 262188, 7, 0, 262189, 3, 0, 262190, 3, 0, 262191, 5, 0, 327683, 7, 0, 327684, 2, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 1, 0, 327690, 5, 0, 327719, 7, 0, 327720, 3, 0, 327721, 3, 0, 327722, 3, 0, 327723, 15, 0, 327724, 9, 0, 327725, 10, 0, 327726, 3, 0, 327727, 5, 0, 327730, 6, 0, 327731, 0, 0, 327732, 4, 0, 393219, 7, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 5, 0, 393255, 7, 0, 393256, 3, 0, 393257, 3, 0, 393258, 3, 0, 393259, 7, 0, 393260, 3, 0, 393261, 3, 0, 393262, 3, 0, 393263, 5, 0, 458755, 7, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 5, 0, 458791, 7, 0, 458792, 3, 0, 458793, 3, 0, 458794, 3, 0, 458795, 7, 0, 458796, 3, 0, 458797, 3, 0, 458798, 3, 0, 458799, 5, 0, 524291, 7, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 5, 0, 524331, 7, 0, 524332, 3, 0, 524333, 3, 0, 524334, 3, 0, 524335, 5, 0, 589827, 7, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 11, 0, 589834, 9, 0, 589835, 13, 0, 589867, 7, 0, 589868, 3, 0, 589869, 3, 0, 589870, 3, 0, 589871, 5, 0, 655363, 7, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 5, 0, 655399, 15, 0, 655400, 9, 0, 655401, 9, 0, 655402, 10, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 5, 0, 720899, 7, 0, 720900, 3, 0, 720901, 3, 0, 720902, 3, 0, 720903, 3, 0, 720904, 3, 0, 720905, 3, 0, 720906, 3, 0, 720907, 5, 0, 720935, 7, 0, 720936, 3, 0, 720937, 3, 0, 720938, 3, 0, 720939, 3, 0, 720940, 3, 0, 720941, 3, 0, 720942, 3, 0, 720943, 5, 0, 786435, 7, 0, 786436, 3, 0, 786437, 3, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 5, 0, 786471, 7, 0, 786472, 3, 0, 786473, 3, 0, 786474, 3, 0, 786475, 3, 0, 786476, 3, 0, 786477, 3, 0, 786478, 3, 0, 786479, 5, 0, 851971, 7, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 5, 0, 852007, 7, 0, 852008, 3, 0, 852009, 3, 0, 852010, 3, 0, 852011, 3, 0, 852012, 3, 0, 852013, 3, 0, 852014, 3, 0, 852015, 5, 0, 852018, 7, 0, 917507, 7, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917543, 7, 0, 917544, 3, 0, 917545, 3, 0, 917546, 3, 0, 917547, 3, 0, 917548, 3, 0, 917549, 3, 0, 917550, 3, 0, 917551, 5, 0, 983043, 7, 0, 983044, 3, 0, 983045, 3, 0, 983046, 3, 0, 983047, 3, 0, 983048, 3, 0, 983049, 3, 0, 983050, 3, 0, 983079, 7, 0, 983080, 3, 0, 983081, 3, 0, 983082, 3, 0, 983083, 3, 0, 983084, 3, 0, 983085, 3, 0, 983086, 3, 0, 983087, 5, 0, 1048579, 7, 0, 1048580, 3, 0, 1048581, 3, 0, 1048582, 3, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 3, 0, 1048586, 3, 0, 1048615, 7, 0, 1048616, 3, 0, 1048617, 3, 0, 1048618, 3, 0, 1048619, 3, 0, 1048620, 3, 0, 1048621, 3, 0, 1048622, 3, 0, 1048623, 5, 0, 1114115, 7, 0, 1114116, 3, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 3, 0, 1114120, 3, 0, 1114121, 3, 0, 1114122, 3, 0, 1114123, 5, 0, 1114151, 7, 0, 1114152, 3, 0, 1114153, 3, 0, 1114154, 3, 0, 1114155, 3, 0, 1114156, 3, 0, 1114157, 3, 0, 1114158, 3, 0, 1114159, 5, 0, 1114162, 7, 0, 1114163, 3, 0, 1179651, 7, 0, 1179652, 3, 0, 1179653, 3, 0, 1179654, 3, 0, 1179655, 3, 0, 1179656, 3, 0, 1179657, 3, 0, 1179658, 3, 0, 1179659, 5, 0, 1179687, 7, 0, 1179688, 3, 0, 1179689, 3, 0, 1179690, 3, 0, 1179691, 3, 0, 1179692, 3, 0, 1179693, 3, 0, 1179694, 3, 0, 1179695, 5, 0, 1179698, 7, 0, 1179699, 3, 0, 1245187, 7, 0, 1245188, 3, 0, 1245189, 3, 0, 1245190, 3, 0, 1245191, 3, 0, 1245192, 3, 0, 1245193, 3, 0, 1245194, 3, 0, 1245195, 5, 0, 1245223, 7, 0, 1245224, 3, 0, 1245225, 3, 0, 1245226, 3, 0, 1245227, 3, 0, 1245228, 3, 0, 1245229, 3, 0, 1245230, 3, 0, 1245231, 5, 0, 1245234, 7, 0, 1245235, 3, 0, 1310723, 7, 0, 1310724, 3, 0, 1310725, 3, 0, 1310726, 3, 0, 1310727, 3, 0, 1310728, 3, 0, 1310729, 3, 0, 1310730, 3, 0, 1310731, 5, 0, 1310759, 7, 0, 1310760, 3, 0, 1310761, 3, 0, 1310762, 3, 0, 1310763, 3, 0, 1310764, 3, 0, 1310765, 3, 0, 1310766, 3, 0, 1310770, 7, 0, 1310771, 3, 0, 1376295, 7, 0, 1376296, 3, 0, 1376297, 3, 0, 1376298, 3, 0, 1376299, 3, 0, 1376300, 3, 0, 1376301, 3, 0, 1376302, 3, 0, 1376306, 7, 0, 1376307, 3, 0, 1441832, 3, 0, 1441833, 3, 0, 1441834, 3, 0, 1441835, 3, 0, 1441836, 3, 0, 1441837, 3, 0, 1441838, 3, 0, 1441842, 7, 0, 1441843, 3, 0 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -33,7 +36,7 @@ __meta__ = {
 }
 
 [node name="Bone" parent="." instance=ExtResource( 3 )]
-position = Vector2( 128, 640 )
+position = Vector2( 288, 232 )
 
 [node name="Bone2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 608, 216 )
@@ -59,8 +62,41 @@ position = Vector2( 2368, 56 )
 [node name="Bone9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2624, -176 )
 
+[node name="Bone10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2624, -416 )
+
+[node name="Bone11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2880, -416 )
+
+[node name="Bone12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3136, -416 )
+
+[node name="Bone13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3392, -416 )
+
+[node name="Bone14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3296, 288 )
+
+[node name="Bone15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2848, 288 )
+
+[node name="Bone16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3776, -32 )
+
 [node name="Ball" parent="." instance=ExtResource( 4 )]
-position = Vector2( 416, -520 )
+position = Vector2( 128, 648 )
+
+[node name="PitSensor" parent="." instance=ExtResource( 16 )]
+position = Vector2( -264, 1080 )
+scale = Vector2( 32.08, 1 )
+
+[node name="PitSensor2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1632, 1032 )
+scale = Vector2( 57.0869, -3.32639 )
+
+[node name="PitSensor3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4296, 1024 )
+scale = Vector2( 79.065, -3.32639 )
 
 [node name="YouLoseSound" parent="." instance=ExtResource( 1 )]
 
@@ -77,11 +113,34 @@ stream = ExtResource( 7 )
 stream = ExtResource( 9 )
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 11 )
 volume_db = -5.0
 
 [node name="UnpauseGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="Squirrel" parent="." instance=ExtResource( 15 )]
+position = Vector2( 3008, -456 )
+walk_range_blocks = 4.0
+
+[node name="Squirrel2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 2912, -48 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3136, 344 )
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3480, 288 )
+move_to = Vector2( 0, 0 )
+
+[node name="MovingPlatform4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3584, -320 )
+move_to = Vector2( 0, 0 )
+
+[node name="MovingPlatform3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3776, 328 )
+move_to = Vector2( 0, -600 )
 
 [node name="GrassyPlatform" parent="." instance=ExtResource( 13 )]
 position = Vector2( 896, 224 )
@@ -108,15 +167,16 @@ move_to = Vector2( 0, -320 )
 
 [node name="GrassyPlatform6" parent="." instance=ExtResource( 13 )]
 position = Vector2( 2368, 760 )
-move_to = Vector2( 0, -1280 )
+move_to = Vector2( 0, -900 )
 speed = 3.0
 
 [node name="Ted" parent="." instance=ExtResource( 2 )]
-position = Vector2( 467.356, 51.9285 )
+position = Vector2( 2704, -184 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Camera2D" type="Camera2D" parent="Ted"]
 current = true
+limit_bottom = 800
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.39
@@ -129,8 +189,22 @@ drag_margin_left = 0.39
 [connection signal="bone_collected" from="Bone7" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone8" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone9" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone10" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone11" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone12" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone13" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone14" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone15" to="." method="_on_Bone_bone_collected"]
+[connection signal="bone_collected" from="Bone16" to="." method="_on_Bone_bone_collected"]
 [connection signal="ball_collected" from="Ball" to="." method="_on_Ball_ball_collected"]
+[connection signal="pit_entered" from="PitSensor" to="." method="_on_PitSensor_pit_entered"]
+[connection signal="pit_entered" from="PitSensor2" to="." method="_on_PitSensor_pit_entered"]
+[connection signal="pit_entered" from="PitSensor3" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
+[connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]
+[connection signal="player_touched" from="Squirrel2" to="." method="_on_Squirrel_player_touched"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
 [connection signal="ted_barks" from="Ted" to="." method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel2" method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel" method="_on_Ted_ted_barks"]
