@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chillLevel-sundaymix.wav-0139dd715e9ef81b5f7f049c6cdaeddb.sample"
+
+[deps]
+
+source_file="res://Audio/chillLevel-sundaymix.wav"
+dest_files=[ "res://.import/chillLevel-sundaymix.wav-0139dd715e9ef81b5f7f049c6cdaeddb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

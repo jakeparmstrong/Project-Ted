@@ -20,7 +20,6 @@ func move_baddie(delta):
 		if get_position().x > original_position.x + walk_range:
 			moving_right = false
 			$AnimatedSprite.set_flip_h(false)
-			#$CollisionShape2D.set_position(Vector2(0,-8))
 		elif velocity.x < top_speed:
 			velocity.x += walk_accel * delta
 		elif velocity.x > top_speed:
@@ -41,7 +40,6 @@ func _physics_process(delta: float) -> void:
 	move_baddie(delta)
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2(0, -1))
-
 
 func _on_Area2D_body_entered(body: Node) -> void:
 	if body.name == "Ted":

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chillLevel.wav-86a9334c89dc98713a85c0acaa5b0bca.sample"
+
+[deps]
+
+source_file="res://Audio/chillLevel.wav"
+dest_files=[ "res://.import/chillLevel.wav-86a9334c89dc98713a85c0acaa5b0bca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

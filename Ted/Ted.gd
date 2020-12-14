@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal pause_game
+signal ted_barks
 
 var moving_right
 var velocity = Vector2()
@@ -15,10 +16,13 @@ var allow_jump = true
 var max_jump_length_s = 1.5
 var has_landed = true
 var state
+var is_thirsty = false #later: set to false until drinking from bowl
 
 onready var CollidingShape = get_node("CollisionShape2D")
 onready var JumpSound = get_node("JumpSound")
 onready var PlopSound = get_node("PlopSound")
+onready var BarkSound = get_node("BarkSound")
+onready var BarkingArea = get_node("BarkArea")
 
 enum state_list{
 	idle,
@@ -39,6 +43,7 @@ func walk():
 	state = state_list.walking
 	top_speed = walk_speed
 	$AnimatedSprite.play("ted_walks")
+
 func turn():
 	state = state_list.turning
 	$AnimatedSprite.play("ted_turns")
@@ -78,6 +83,22 @@ func can_wind_up():
 		return true
 	else:
 		return false
+		
+func ready_to_attack():
+	if state == state_list.idle or state == state_list.walking or state == state_list.turning or state == state_list.running:
+		#also: make sure that the button wasn't just held down?
+		return true
+	else:
+		return false
+
+func bark():
+	if !is_thirsty:
+		BarkSound.play()
+		state = state_list.barking
+		$AnimatedSprite.play("ted_barks")
+		emit_signal("ted_barks")
+	else:
+		$AnimatedSprite.play("ted_weak_bark")
 
 func get_input(delta):
 	if Input.is_action_just_pressed("ui_pause"):
@@ -85,7 +106,6 @@ func get_input(delta):
 	if should_run() == true:
 		state = state_list.running
 		top_speed = run_speed
-		#dumb move to show for now
 		$AnimatedSprite.play("ted_runs")
 	elif done_run():
 		walk()
@@ -130,6 +150,8 @@ func get_input(delta):
 		allow_jump = false
 	if !is_on_floor() and !Input.is_action_pressed("player_jump"):
 		allow_jump = false
+	if Input.is_action_just_pressed("player_attack") and ready_to_attack():
+		bark()
 	if not moving_right:
 		$AnimatedSprite.set_flip_h(true)
 	else:
@@ -158,7 +180,6 @@ func just_landed():
 	return retVal
 
 func _on_AnimatedSprite_animation_finished() -> void:
-	#this might be better practice if you just check which animation it is
 	if state == state_list.turning:
 		state = state_list.idle
 		$AnimatedSprite.play("ted_stands")
@@ -170,7 +191,9 @@ func _on_AnimatedSprite_animation_finished() -> void:
 			state = state_list.jumping
 			$AnimatedSprite.play("ted_jump_up")
 			JumpSound.play()
-
 	if state == state_list.jumping and !Input.is_action_pressed("player_jump"):
 		state = state_list.falling
 		$AnimatedSprite.play("ted_falling")
+	if state == state_list.barking:
+		state = state_list.idle
+		$AnimatedSprite.play("ted_stands")
