@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Ted/Ted.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TILES/GrassyTileSet.tres" type="TileSet" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Audio/win.wav" type="AudioStream" id=12]
 [ext_resource path="res://Audio/loss.wav" type="AudioStream" id=13]
 [ext_resource path="res://Audio/whltnup.wav" type="AudioStream" id=14]
+[ext_resource path="res://baddies/Squirrel/Squirrel.tscn" type="PackedScene" id=15]
 
 [node name="JD_TestLevel" type="Node2D"]
 script = ExtResource( 10 )
@@ -22,7 +23,7 @@ script = ExtResource( 10 )
 follow_viewport_enable = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.1, 0.003 )
+motion_scale = Vector2( 0.01, 0.003 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 928, 920 )
@@ -40,6 +41,10 @@ pause_mode = 2
 stream = ExtResource( 5 )
 volume_db = -5.0
 
+[node name="Squirrel" parent="." instance=ExtResource( 15 )]
+position = Vector2( 40, 544 )
+walk_range_blocks = 3.0
+
 [node name="YouWinSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 12 )
@@ -47,6 +52,10 @@ stream = ExtResource( 12 )
 [node name="YouLoseSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 13 )
+
+[node name="Squirrel2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1408, 488 )
+walk_range_blocks = 4.0
 
 [node name="UnpauseGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
@@ -56,6 +65,7 @@ stream = ExtResource( 11 )
 
 [node name="Ted" parent="." instance=ExtResource( 1 )]
 position = Vector2( 319.811, 181.745 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="Camera2D" type="Camera2D" parent="Ted"]
 current = true
@@ -138,7 +148,11 @@ position = Vector2( 2584.51, 1731.18 )
 
 [node name="BoneCollected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+[connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]
+[connection signal="player_touched" from="Squirrel2" to="." method="_on_Squirrel_player_touched"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="ted_barks" from="Ted" to="Squirrel" method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel2" method="_on_Ted_ted_barks"]
 [connection signal="ball_collected" from="Ball" to="." method="_on_Ball_ball_collected"]
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]

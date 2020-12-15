@@ -97,7 +97,7 @@ __meta__ = {
 }
 
 [node name="TitleHeader" type="Label" parent="Menu"]
-margin_right = 1024.0
+margin_right = 1264.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 0, 256 )
 custom_fonts/font = SubResource( 2 )
@@ -109,7 +109,7 @@ valign = 1
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 pause_mode = 2
 margin_top = 260.0
-margin_right = 1024.0
+margin_right = 1264.0
 margin_bottom = 600.0
 size_flags_vertical = 3
 alignment = 1
@@ -118,9 +118,9 @@ __meta__ = {
 }
 
 [node name="PushStart" type="Label" parent="Menu/CenterRow"]
-margin_left = 182.0
+margin_left = 302.0
 margin_top = 96.0
-margin_right = 842.0
+margin_right = 962.0
 margin_bottom = 244.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
@@ -130,8 +130,8 @@ valign = 1
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 visible = false
-margin_left = 180.0
-margin_right = 1024.0
+margin_left = 664.0
+margin_right = 1264.0
 margin_bottom = 340.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -139,13 +139,11 @@ __meta__ = {
 }
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
-margin_right = 844.0
 custom_fonts/font = SubResource( 4 )
 text = "Play Game"
 
 [node name="Controls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 64.0
-margin_right = 844.0
 margin_bottom = 124.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
@@ -153,7 +151,6 @@ text = "Keyboard Controls"
 
 [node name="GamepadControls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 24 )]
 margin_top = 128.0
-margin_right = 844.0
 margin_bottom = 188.0
 custom_colors/font_color_pressed = Color( 0.00784314, 0.0470588, 0.176471, 1 )
 text = "Gamepad Controls"
@@ -191,6 +188,7 @@ script = ExtResource( 12 )
 position = Vector2( 499.312, 211.708 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 6 )
+frame = 7
 playing = true
 
 [node name="ControlsWindow" type="ColorRect" parent="."]
@@ -218,7 +216,7 @@ anchor_bottom = 0.5
 margin_left = -270.0
 margin_top = -75.0
 margin_right = 270.0
-margin_bottom = 100.0
+margin_bottom = 115.0
 texture = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -230,9 +228,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -264.0
-margin_top = -65.0
+margin_top = -75.0
 margin_right = 264.0
-margin_bottom = 65.0
+margin_bottom = 74.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
 text = "Keyboard Controls
@@ -241,6 +239,7 @@ Move left           Left Arrow
 Move right         Right Arrow
 Run/Cancel               Shift
 Jump/Accept              Space
+Bark                      Ctrl
 Pause/Unpause              Esc"
 align = 1
 valign = 1
@@ -273,7 +272,7 @@ anchor_bottom = 0.5
 margin_left = -270.0
 margin_top = -75.0
 margin_right = 270.0
-margin_bottom = 100.0
+margin_bottom = 115.0
 texture = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -285,17 +284,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -248.0
-margin_top = -65.0
+margin_top = -75.0
 margin_right = 248.0
-margin_bottom = 65.0
+margin_bottom = 74.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
 text = "Gamepad Controls
 
 Move left           Left D-Pad
 Move right         Right D-Pad
-Run/Cancel                   X
+Run/Cancel                   B
 Jump/Accept                  A
+Bark                         X
 Pause/Unpause          Options"
 align = 1
 __meta__ = {

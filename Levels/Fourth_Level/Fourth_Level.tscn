@@ -123,9 +123,12 @@ stream = ExtResource( 8 )
 [node name="Squirrel" parent="." instance=ExtResource( 15 )]
 position = Vector2( 3008, -456 )
 walk_range_blocks = 4.0
+long_delay = 0.83
+short_delay = 0.43
 
 [node name="Squirrel2" parent="." instance=ExtResource( 15 )]
-position = Vector2( 2912, -48 )
+position = Vector2( 2888, -48 )
+walk_range_blocks = 1.0
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3136, 344 )
@@ -171,7 +174,7 @@ move_to = Vector2( 0, -900 )
 speed = 3.0
 
 [node name="Ted" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2704, -184 )
+position = Vector2( 464, 184 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Camera2D" type="Camera2D" parent="Ted"]
@@ -205,6 +208,6 @@ drag_margin_left = 0.39
 [connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]
 [connection signal="player_touched" from="Squirrel2" to="." method="_on_Squirrel_player_touched"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
-[connection signal="ted_barks" from="Ted" to="." method="_on_Ted_ted_barks"]
 [connection signal="ted_barks" from="Ted" to="Squirrel2" method="_on_Ted_ted_barks"]
 [connection signal="ted_barks" from="Ted" to="Squirrel" method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="." method="_on_Ted_ted_barks"]

@@ -96,6 +96,7 @@ func bark():
 		BarkSound.play()
 		state = state_list.barking
 		$AnimatedSprite.play("ted_barks")
+		$BarkAnim.play("Barking")
 		emit_signal("ted_barks")
 	else:
 		$AnimatedSprite.play("ted_weak_bark")
@@ -196,4 +197,5 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		$AnimatedSprite.play("ted_falling")
 	if state == state_list.barking:
 		state = state_list.idle
+		$BarkAnim.play("off")
 		$AnimatedSprite.play("ted_stands")
