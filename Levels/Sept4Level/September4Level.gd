@@ -115,3 +115,9 @@ func win_handler(bone, time, _reason):
 func _on_PitSensor_pit_entered() -> void:
 	var time_remaining = ClockLabel.get_clock_time()
 	game_over(bone_score, time_remaining, gameover_reason.death)
+
+
+func _on_Squirrel_player_touched() -> void:
+	var time_remaining = ClockLabel.get_clock_time()
+	game_over(bone_score, time_remaining, gameover_reason.death)
+

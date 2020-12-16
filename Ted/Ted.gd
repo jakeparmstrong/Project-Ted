@@ -165,10 +165,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide(velocity, Vector2(0, -1))
 	if just_landed():
 		state = state_list.idle
+		$BarkAnim.play("off")
 		$AnimatedSprite.play("ted_stands")
 		PlopSound.play()
 	if !is_on_floor() and velocity.y > 0:
 		state = state_list.falling
+		$BarkAnim.play("off")
 		$AnimatedSprite.play("ted_falling")
 
 func just_landed():
@@ -199,3 +201,4 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		state = state_list.idle
 		$BarkAnim.play("off")
 		$AnimatedSprite.play("ted_stands")
+		

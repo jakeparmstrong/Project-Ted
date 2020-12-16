@@ -8,6 +8,7 @@ var top_speed = 150
 var walk_accel = 1000
 var gravity_scale = 470
 var original_position
+export(String, "Black", "Brown", "Gray", "White") var colour = "Gray"
 export(float) var walk_range_blocks = 1
 onready var walk_range = 64 * walk_range_blocks
 var within_earshot = false
@@ -50,10 +51,10 @@ func on_timeout():
 	allow_jump = true
 
 func bigJump():
-	$AnimatedSprite.play("jumping")
+	$AnimatedSprite.play("jumping_" + colour)
 	
 func littleJump():
-	$AnimatedSprite.play("jumping")
+	$AnimatedSprite.play("jumping_" + colour)
 
 func is_airborne():
 	if state != state_list.idle:
@@ -90,18 +91,18 @@ func move_baddie(delta):
 					#print("State Transition (Idle -> Jumping)")
 					JumpSound.play()
 					state = state_list.jumping
-					$AnimatedSprite.play("jumping")
+					$AnimatedSprite.play("jumping_" + colour)
 			if state == state_list.jumping:
 				jump_timer += delta
 				velocity.y -= gravity_scale * (jump_multiplier - 1)
 		elif state == state_list.jumping:
 			#print("State Transition (Jumping -> Falling)")
-			$AnimatedSprite.play("falling")
+			$AnimatedSprite.play("falling_" + colour)
 			state = state_list.falling
 		elif state == state_list.falling and is_on_floor():
 			#print("State Transition (Falling -> Idle)")
 			LandSound.play()
-			$AnimatedSprite.play("idle")
+			$AnimatedSprite.play("idle_" + colour)
 			pattern += 1
 			pattern %= pattern_length
 			if pattern == 0:

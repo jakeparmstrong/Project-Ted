@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Audio/SecretLevel.wav" type="AudioStream" id=1]
 [ext_resource path="res://Levels/Sept4Level/EarthyTileSet.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Levels/Sept4Level/MovingPlatformGrass.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Levels/Sept4Level/MovingPlatformEarth.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Audio/tedLife.wav" type="AudioStream" id=17]
+[ext_resource path="res://baddies/Squirrel/Squirrel.tscn" type="PackedScene" id=18]
 
 [node name="September4Level" type="Node2D"]
 script = ExtResource( 5 )
@@ -28,6 +29,7 @@ follow_viewport_enable = true
 motion_scale = Vector2( 0.1, 0.003 )
 
 [node name="NightSky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -8 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 12288, 4000 )
@@ -44,6 +46,15 @@ position = Vector2( 3768, 760 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3000, 1000 )
+
+[node name="Squirrel" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3368, 192 )
+long_delay = 0.6
+short_delay = 0.3
+small_jump_multiplier = 2.0
+
+[node name="Squirrel2" parent="." instance=ExtResource( 18 )]
+position = Vector2( -288, -32 )
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -200,6 +211,8 @@ limit_bottom = 800
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.39
+[connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]
+[connection signal="player_touched" from="Squirrel2" to="." method="_on_Squirrel_player_touched"]
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
@@ -233,3 +246,5 @@ drag_margin_left = 0.39
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
+[connection signal="ted_barks" from="Ted" to="Squirrel2" method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel" method="_on_Ted_ted_barks"]

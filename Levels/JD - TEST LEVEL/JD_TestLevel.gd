@@ -93,7 +93,7 @@ func loss_handler(bone, time, reason):
 	if Globals.get_life_count() < 0:
 		SceneChanger.change_scene("res://GameOver/GameOver.tscn")
 	else:
-		SceneChanger.change_scene("res://Levels/Sept4Level/September4Level.tscn")
+		SceneChanger.change_scene("res://Levels/JD - TEST LEVEL/JD_TestLevel.tscn")
 
 func win_handler(bone, time, _reason):
 	var end_text
@@ -109,7 +109,7 @@ func win_handler(bone, time, _reason):
 	print("played")
 	yield(YouWinSound, "finished")
 	print("Won")
-	SceneChanger.change_scene("res://GameOver/ThanksForPlaying.tscn")
+	SceneChanger.change_scene("res://Levels/Fourth_Level/Fourth_Level.tscn")
 
 func _on_PitSensor_pit_entered() -> void:
 	var time_remaining = ClockLabel.get_clock_time()
@@ -117,4 +117,5 @@ func _on_PitSensor_pit_entered() -> void:
 
 
 func _on_Squirrel_player_touched() -> void:
-	pass # Replace with function body.
+	  var time_remaining = ClockLabel.get_clock_time()
+	  game_over(bone_score, time_remaining, gameover_reason.death)

@@ -16,20 +16,20 @@ radius = 24.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
-"loop": false,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
-"name": "falling",
+"name": "falling_Gray",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 1 ) ],
 "loop": false,
-"name": "jumping",
+"name": "jumping_Gray",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "idle_Gray",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -47,7 +47,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
-animation = "jumping"
+animation = "jumping_Gray"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

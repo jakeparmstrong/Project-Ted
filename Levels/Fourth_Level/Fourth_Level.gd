@@ -103,7 +103,7 @@ func win_handler(bone, time, _reason):
 	LevelMusic.stop()
 	YouWinSound.play()
 	yield(YouWinSound, "finished")
-	SceneChanger.change_scene("res://Levels/Sept4Level/September4Level.tscn")
+	SceneChanger.change_scene("res://GameOver/ThanksForPlaying.tscn")
 	
 func _on_PitSensor_pit_entered() -> void:
 	var time_remaining = ClockLabel.get_clock_time()

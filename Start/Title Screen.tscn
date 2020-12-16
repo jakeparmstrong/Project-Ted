@@ -97,7 +97,7 @@ __meta__ = {
 }
 
 [node name="TitleHeader" type="Label" parent="Menu"]
-margin_right = 1264.0
+margin_right = 1024.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 0, 256 )
 custom_fonts/font = SubResource( 2 )
@@ -109,7 +109,7 @@ valign = 1
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 pause_mode = 2
 margin_top = 260.0
-margin_right = 1264.0
+margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_vertical = 3
 alignment = 1
@@ -118,9 +118,9 @@ __meta__ = {
 }
 
 [node name="PushStart" type="Label" parent="Menu/CenterRow"]
-margin_left = 302.0
+margin_left = 182.0
 margin_top = 96.0
-margin_right = 962.0
+margin_right = 842.0
 margin_bottom = 244.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.172549, 0.00392157, 0.301961, 1 )
@@ -188,7 +188,7 @@ script = ExtResource( 12 )
 position = Vector2( 499.312, 211.708 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 6 )
-frame = 7
+frame = 9
 playing = true
 
 [node name="ControlsWindow" type="ColorRect" parent="."]

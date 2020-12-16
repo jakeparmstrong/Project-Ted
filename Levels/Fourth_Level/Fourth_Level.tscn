@@ -208,6 +208,5 @@ drag_margin_left = 0.39
 [connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]
 [connection signal="player_touched" from="Squirrel2" to="." method="_on_Squirrel_player_touched"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
-[connection signal="ted_barks" from="Ted" to="Squirrel2" method="_on_Ted_ted_barks"]
 [connection signal="ted_barks" from="Ted" to="Squirrel" method="_on_Ted_ted_barks"]
-[connection signal="ted_barks" from="Ted" to="." method="_on_Ted_ted_barks"]
+[connection signal="ted_barks" from="Ted" to="Squirrel2" method="_on_Ted_ted_barks"]
