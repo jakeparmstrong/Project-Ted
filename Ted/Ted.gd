@@ -15,8 +15,11 @@ var jump_button_timer = 0
 var allow_jump = true
 var max_jump_length_s = 1.5
 var has_landed = true
+var rng = RandomNumberGenerator.new()
 var state
-var is_thirsty = false #later: set to false until drinking from bowl
+var bark_pitch = 1.25
+var at_bowl = false
+var bark_ammo = 0
 
 onready var CollidingShape = get_node("CollisionShape2D")
 onready var JumpSound = get_node("JumpSound")
@@ -33,11 +36,13 @@ enum state_list{
 	turning,
 	running,
 	barking,
-#	landing,
+	drinking,
 }
 
 func _ready() -> void:
 	moving_right = true
+	rng.randomize()
+	BarkSound.pitch_scale = bark_pitch
 	
 func walk():
 	state = state_list.walking
@@ -48,6 +53,15 @@ func turn():
 	state = state_list.turning
 	$AnimatedSprite.play("ted_turns")
 	velocity.x = 0
+
+func drink():
+	state = state_list.drinking
+	velocity.x = 0
+	$AnimatedSprite.play("ted_drinks") #Must position him relative to water bowl for nice animation
+	bark_ammo = 5
+	yield($AnimatedSprite, "animation_finished")
+	state = state_list.idle
+	$AnimatedSprite.play("ted_stands")
 
 func should_run():
 	if Input.is_action_pressed("player_run") and state == state_list.walking:
@@ -91,15 +105,24 @@ func ready_to_attack():
 	else:
 		return false
 
+func is_moveable():
+	if state != state_list.drinking:
+		return true
+	else: 
+		return false
+
 func bark():
-	if !is_thirsty:
+	if bark_ammo > 0:
 		BarkSound.play()
+		bark_ammo -= 1
 		state = state_list.barking
 		$AnimatedSprite.play("ted_barks")
 		$BarkAnim.play("Barking")
 		emit_signal("ted_barks")
+		BarkSound.pitch_scale = bark_pitch + rng.randf_range(0, 0.35)
 	else:
 		$AnimatedSprite.play("ted_weak_bark")
+		state = state_list.barking
 
 func get_input(delta):
 	if Input.is_action_just_pressed("ui_pause"):
@@ -111,39 +134,42 @@ func get_input(delta):
 	elif done_run():
 		walk()
 	if Input.is_action_pressed("player_walk_right"):
-		if should_turn_right():
-			turn()
-		if state == state_list.idle:
-			walk()
-		moving_right = true
-		if velocity.x < top_speed:
-			velocity.x += walk_accel * delta
-		elif velocity.x > top_speed:
-			velocity.x -= walk_accel * delta
+		if is_moveable():
+			if should_turn_right():
+				turn()
+			if state == state_list.idle:
+				walk()
+			moving_right = true
+			if velocity.x < top_speed:
+				velocity.x += walk_accel * delta
+			elif velocity.x > top_speed:
+				velocity.x -= walk_accel * delta
 	elif Input.is_action_pressed("player_walk_left"):
-		if should_turn_left():
-			turn()
-		if state == state_list.idle:
-			walk()
-		moving_right = false
-		if velocity.x > -top_speed:
-			velocity.x -= walk_accel * delta
-		elif velocity.x < -top_speed:
-			velocity.x += walk_accel * delta
+		if is_moveable():
+			if should_turn_left():
+				turn()
+			if state == state_list.idle:
+				walk()
+			moving_right = false
+			if velocity.x > -top_speed:
+				velocity.x -= walk_accel * delta
+			elif velocity.x < -top_speed:
+				velocity.x += walk_accel * delta
 	else:
 		if velocity.x != 0:
 			velocity.x =  0
 		if state == state_list.walking:
 			state = state_list.idle
 			$AnimatedSprite.play("ted_stands")
-	if Input.is_action_pressed("player_jump") and jump_button_timer < 0.2 and allow_jump:
-		if Input.is_action_just_pressed("player_jump"):
-			if can_wind_up():
-				state = state_list.windup
-				$AnimatedSprite.play("ted_jump_windup")
-		if state == state_list.jumping:
-			jump_button_timer += delta
-			velocity.y -= gravity_scale * (jump_multiplier - 1)
+	if Input.is_action_pressed("player_jump") and jump_button_timer < 0.2 and allow_jump:	
+		if is_moveable():
+			if Input.is_action_just_pressed("player_jump"):
+				if can_wind_up():
+					state = state_list.windup
+					$AnimatedSprite.play("ted_jump_windup")
+			if state == state_list.jumping:
+				jump_button_timer += delta
+				velocity.y -= gravity_scale * (jump_multiplier - 1)
 	if is_on_floor() and !Input.is_action_pressed("player_jump"): 
 		allow_jump = true
 		jump_button_timer = 0
@@ -153,6 +179,8 @@ func get_input(delta):
 		allow_jump = false
 	if Input.is_action_just_pressed("player_attack") and ready_to_attack():
 		bark()
+	if Input.is_action_just_pressed("player_drink") and at_bowl:
+		drink()
 	if not moving_right:
 		$AnimatedSprite.set_flip_h(true)
 	else:
@@ -202,3 +230,12 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		$BarkAnim.play("off")
 		$AnimatedSprite.play("ted_stands")
 		
+
+
+func _on_WaterBowl_at_bowl() -> void:
+	at_bowl = true
+
+
+
+func _on_WaterBowl_left_bowl() -> void:
+	at_bowl = false

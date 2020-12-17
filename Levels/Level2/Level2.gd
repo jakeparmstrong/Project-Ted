@@ -69,21 +69,20 @@ func game_over(bone, time, reason):
 	get_tree().paused = true
 	match reason:
 		gameover_reason.stage_clear:
-			win_handler(bone, time, reason)
+			win_handler(bone, time)
 		gameover_reason.time_over:
 			loss_handler(bone, time, reason)
 		gameover_reason.death:
 			loss_handler(bone, time, reason)
 
-func loss_handler(bone, time, reason):
+func loss_handler(bone, _time, reason):
 	var end_text
 	if reason == gameover_reason.time_over:
 		end_text = "TIME OVER"
 	elif reason == gameover_reason.death:
-		end_text = ""
+		end_text = "OUCH!!!"
 	EndText.set_text(end_text)
 	EndText.set_visible(true)
-	FinalScoreLabel.update_text(bone, time)
 	LevelMusic.stop()
 	YouLoseSound.play()
 	yield(YouLoseSound, "finished")
@@ -93,11 +92,12 @@ func loss_handler(bone, time, reason):
 	else:
 		SceneChanger.change_scene("res://Levels/Level2/Level2.tscn")
 
-func win_handler(bone, time, _reason):
+func win_handler(bone, time):
 	var end_text
 	end_text = "STAGE CLEAR"
 	EndText.set_text(end_text)
 	EndText.set_visible(true)
+	Globals.add_score(bone,time)
 	FinalScoreLabel.update_text(bone, time)
 	FinalScore.set_visible(true)
 	LevelMusic.stop()

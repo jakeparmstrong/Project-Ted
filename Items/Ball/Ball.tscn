@@ -32,7 +32,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BallArea"]
 frames = SubResource( 2 )
-frame = 3
 playing = true
 [connection signal="ball_collected_internal" from="BallArea" to="." method="_on_BallArea_ball_collected_internal"]
 [connection signal="body_entered" from="BallArea" to="BallArea" method="_on_BallArea_body_entered"]

@@ -10,10 +10,13 @@ var gravity_scale = 500
 var original_position
 var walk_range
 
+onready var Vroom = get_node("VacSound")
+
 func _ready() -> void:
 	moving_right = true
 	original_position = get_position()
 	walk_range = 192
+	Vroom.play()
 
 func move_baddie(delta):
 	if moving_right:
@@ -44,3 +47,7 @@ func _physics_process(delta: float) -> void:
 func _on_Area2D_body_entered(body: Node) -> void:
 	if body.name == "Ted":
 		emit_signal("player_touched")
+
+
+func _on_VacSound_finished() -> void:
+	Vroom.play()

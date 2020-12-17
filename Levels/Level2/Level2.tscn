@@ -13,7 +13,7 @@
 [ext_resource path="res://Audio/boneget.wav" type="AudioStream" id=11]
 [ext_resource path="res://Levels/Kitchen/KitchenPlatform.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Audio/tedLife.wav" type="AudioStream" id=13]
-[ext_resource path="res://baddies/Squirrel/Squirrel.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Items/Bowl/WaterBowl.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Audio/whltnup.wav" type="AudioStream" id=26]
 [ext_resource path="res://Audio/tedLevelSong.wav" type="AudioStream" id=27]
 
@@ -137,6 +137,9 @@ scale = Vector2( 6.29979, 0.898181 )
 position = Vector2( 6688, 0 )
 scale = Vector2( 5.78221, 1.04263 )
 
+[node name="WaterBowl" parent="." instance=ExtResource( 14 )]
+position = Vector2( 616, 504 )
+
 [node name="Ted" parent="." instance=ExtResource( 2 )]
 position = Vector2( 161.652, 76.8509 )
 scale = Vector2( 0.75, 0.75 )
@@ -156,9 +159,6 @@ position = Vector2( 4128, 160 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Interface" parent="CanvasLayer" instance=ExtResource( 5 )]
-
-[node name="Squirrel" parent="." instance=ExtResource( 14 )]
-position = Vector2( 728, 360 )
 [connection signal="bone_collected" from="Bone" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone2" to="." method="_on_Bone_bone_collected"]
 [connection signal="bone_collected" from="Bone3" to="." method="_on_Bone_bone_collected"]
@@ -183,10 +183,10 @@ position = Vector2( 728, 360 )
 [connection signal="pit_entered" from="PitSensor" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pit_entered" from="PitSensor2" to="." method="_on_PitSensor_pit_entered"]
 [connection signal="pit_entered" from="PitSensor3" to="." method="_on_PitSensor_pit_entered"]
+[connection signal="at_bowl" from="WaterBowl" to="Ted" method="_on_WaterBowl_at_bowl"]
+[connection signal="left_bowl" from="WaterBowl" to="Ted" method="_on_WaterBowl_left_bowl"]
 [connection signal="pause_game" from="Ted" to="." method="_on_Ted_pause_game"]
 [connection signal="pause_game" from="Ted" to="CanvasLayer/Interface" method="_on_Ted_pause_game"]
-[connection signal="ted_barks" from="Ted" to="Squirrel" method="_on_Ted_ted_barks"]
 [connection signal="player_touched" from="VacGoon" to="." method="_on_VacGoon_player_touched"]
 [connection signal="time_out_external" from="CanvasLayer/Interface" to="." method="_on_Interface_time_out_external"]
 [connection signal="unpause_external" from="CanvasLayer/Interface" to="." method="_on_Interface_unpause_external"]
-[connection signal="player_touched" from="Squirrel" to="." method="_on_Squirrel_player_touched"]

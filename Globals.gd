@@ -15,7 +15,8 @@ func add_life():
 func get_life_count():
 	return life_count
 
-func add_score(level_score):
+func add_score(bone, time):
+	var level_score = (bone * 10) + (time * 5)
 	total_score += level_score
 
 func get_total_score():

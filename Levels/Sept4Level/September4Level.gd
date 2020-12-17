@@ -70,7 +70,7 @@ func game_over(bone, time, reason):
 	get_tree().paused = true
 	match reason:
 		gameover_reason.stage_clear:
-			win_handler(bone, time, reason)
+			win_handler(bone, time)
 		gameover_reason.time_over:
 			loss_handler(bone, time, reason)
 		gameover_reason.death:
@@ -96,20 +96,17 @@ func loss_handler(bone, time, reason):
 	else:
 		SceneChanger.change_scene("res://Levels/Sept4Level/September4Level.tscn")
 
-func win_handler(bone, time, _reason):
+func win_handler(bone, time):
 	var end_text
 	end_text = "STAGE CLEAR"
 	EndText.set_text(end_text)
 	EndText.set_visible(true)
+	Globals.add_score(bone,time)
 	FinalScoreLabel.update_text(bone, time)
 	FinalScore.set_visible(true)
-	print("Won")
 	LevelMusic.stop()
-	print("Okay")
 	YouWinSound.play()
-	print("played")
 	yield(YouWinSound, "finished")
-	print("Won")
 	SceneChanger.change_scene("res://Levels/JD - TEST LEVEL/JD_TestLevel.tscn")
 
 func _on_PitSensor_pit_entered() -> void:

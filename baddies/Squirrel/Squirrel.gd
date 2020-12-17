@@ -26,6 +26,7 @@ var state
 
 onready var JumpSound = get_node("JumpSound")
 onready var LandSound = get_node("LandSound")
+onready var RunSound = get_node("RunSound")
 
 enum state_list{
 	idle,
@@ -138,6 +139,7 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 		within_earshot = true
 
 func die():
+	RunSound.play()
 	queue_free() #Make function with death anim
 	#TODO: Add death animation, death sound?
 	
